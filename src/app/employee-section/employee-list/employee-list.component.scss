@@ -1,0 +1,193 @@
+@import "../../../assets/styles/themes/variables";
+@import "../../../assets/styles/pages/dashboard";
+@import "primeicons/primeicons.css";
+
+:host ::ng-deep {
+    .p-paginator {
+        .p-paginator-current {
+            margin-left: auto;
+        }
+    }
+    
+    .p-progressbar {
+        height: .5rem;
+        background-color: #D8DADC;
+    
+        .p-progressbar-value {
+            background-color: #607D8B;
+        }
+    }
+    
+    .table-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .p-calendar .p-datepicker {
+        min-width: 25rem;
+    
+        td {
+            font-weight: 400;
+        }
+    }
+    
+    .p-datatable.p-datatable-customers {
+        .p-datatable-header {
+            padding: 1rem;
+            text-align: left;
+            font-size: 1.5rem;
+        }
+    
+        .p-paginator {
+            padding: 1rem;
+        }
+    
+        .p-datatable-thead > tr > th {
+            text-align: left;
+        }
+    
+        .p-datatable-tbody > tr > td {
+            cursor: auto;
+        }
+    
+        .p-dropdown-label:not(.p-placeholder) {
+            text-transform: uppercase;
+        }
+    }
+
+    .p-w-100 {
+        width: 100%;
+    }
+    
+    .p-datatable-customers .p-datatable-tbody > tr > td .p-column-title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    :host ::ng-deep {
+        .p-datatable {
+            &.p-datatable-customers {
+                .p-datatable-thead > tr > th,
+                .p-datatable-tfoot > tr > td {
+                    display: none !important;
+                }
+    
+                .p-datatable-tbody > tr {
+                    border-bottom: 1px solid var(--layer-2);
+    
+                    > td {
+                        text-align: left;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        border: 0 none;
+    
+                        .p-column-title {
+                            min-width: 30%;
+                            display: inline-block;
+                            font-weight: bold;
+                        }
+        
+                        p-progressbar {
+                            width: 100%;
+                        }
+
+                        &:last-child {
+                            border-bottom: 1px solid var(--surface-d);
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+
+.main-content{
+    .main-body{padding-left: 100px;}
+    .uploadsec{color: $purple;}
+    .tabsec {
+
+        .nav-tabs .nav-link, .nav-tabs{
+            border-bottom: 1px solid #CBCCCB;
+        }
+        .nav-tabs .nav-link{
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: 500;
+            color: #3A3A3A;
+            padding: 18px 40px;
+            border: none;
+            border-bottom: 3px solid transparent;
+            background-color: transparent;
+            -moz-transition: all 300ms ease-in-out 0s;
+            -webkit-transition: all 300ms ease-in-out 0s;
+            transition: all 300ms ease-in-out 0s;
+            &:hover, &.active{
+                border-bottom: 3px solid #594170;
+                font-weight: 600;
+            }
+            
+        }
+    }
+    .tabel-sec th{
+        background-color: #E8E8E8;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+        color: #777776;
+        padding: 12px 8px;
+        text-align: center;
+    }
+    .tabel-sec tr td strong{
+        color: $purple;
+    }
+    .tabel-sec tr td{
+        font-size: 14px;
+        font-weight: 500;
+        text-align: left;
+        border: none;
+    }
+    .tabel-sec tr:nth-child(even) {
+    background: #F4EFF4;
+    }
+    .tabel-sec p-paginator.p-element{display: flex; justify-content: end;}
+    .tabel-sec .p-datatable-header {
+        .p-input-icon{
+            top: 8px;
+        }
+        i{
+            font-size: 20px;
+            color: $purple;
+        }
+
+    input{
+        height: 45px !important;
+        color: #777776;
+        border: 1px solid #CBBFCF4D;
+        &:focus{
+            box-shadow: none;
+            border: 1px solid $purple;
+        }
+    }
+    .download-icon{
+        height: 45px;
+    width: 45px;
+    background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 5px;
+    }
+}
+}
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+    color: #000 !important;
+}
+
+.page-title-box{
+    i{color: $purple;}
+}

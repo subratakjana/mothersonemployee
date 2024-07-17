@@ -1,0 +1,38 @@
+@import "../../../assets/styles/themes/variables";
+@import "../../../assets/styles/pages/dashboard";
+
+
+.header-sec{
+    background-color: $header-bg;
+    .navbar-header{
+        height: 75px;
+
+        .header-img{
+            img{height: 32px;}
+        }
+        .icon-item a{
+            transition: 0.8s;
+            svg-icon svg{
+                height: 28px;
+                width: 28px;
+                object-fit: cover;
+            }
+            &:hover{
+                svg {
+                    path{
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+
+        .user-image {
+            img {
+                height: 48px;
+                width: 48px;
+                object-fit: cover;
+            }
+        }
+    }
+
+}

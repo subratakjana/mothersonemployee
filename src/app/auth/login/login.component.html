@@ -1,0 +1,154 @@
+<!-- <div class="login-container d-flex align-items-center justify-content-center vh-100 position-relative">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-12 col-sm-12 col-xxl-7 col-xl-8 col-lg-8">
+        <div class="login-content z-index-2 position-relative d-block w-100">
+          <img src="../../../assets/images/login/login-logo.png" alt="Loign" class="w-auto img-fluid">
+          <h1 class="text-white fw-bold display-3 lh-2 text-start fst-normal mt-7 mb-3">Efficiency starts here.</h1>
+          <h3 class="m-0 p-0 text-white display-6 lh-2">Get ready to accelerate your business with us.</h3>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-xxl-4 col-xl-4 col-lg-4">
+        <div class="login-box text-center bg-white bg-opacity-75 position-relative z-2 px-8 py-6 w-100 rounded-4">
+          <h2 class="text-black h4 fw-bold lh-3 mb-3">Sign in</h2>
+          <p class="lh-3 fw-normal mb-5">Welcome back! Please enter your details</p>
+          <div class="f-section">
+            <form class="text-start mt-4">
+              <div class="mb-3">
+                <label for="username" class="form-label mb-1"><small>Username</small> <span class="text-danger">
+                    *</span></label>
+                <input type="text" class="form-control border-0 rounded-2 text-black focus-ring focus-ring-light"
+                  id="username" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 position-relative">
+                <label for="Password" class="form-label mb-1"><small>Password</small> <span class="text-danger">
+                    *</span></label>
+                <input type="password" class="form-control border-0 rounded-2 text-black focus-ring focus-ring-light"
+                  id="Password" [type]="show ? 'text' : 'password'">
+                <img (click)="togglePassword()"
+                  [src]="show?'assets/images/login/show-password.png':'assets/images/login/hide-password.png'"
+                  class="form-append-img cursor-pointer position-absolute top-50 end-0 translate-middle-x" loading="lazy" />
+              </div>
+              <div class="mb-3">
+                <label for="SelectUnit" class="form-label mb-1"><small>Select Unit</small> <span class="text-danger">
+                    *</span></label>
+                <select class="form-select border-0 rounded-2 text-black focus-ring focus-ring-light h6"
+                  for="SelectUnit">
+                  <option selected>Marelli Motherson Automotive...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="mb-3 form-check">
+                <div class="d-flex align-items-center justify-content-sm-between">
+                  <div class="fchek">
+                    <input type="checkbox" class="form-check-input ocus-ring focus-ring-light" id="Remember">
+                    <label class="form-check-label" for="Remember">Remember me</label>
+                  </div>
+                  <div class="l-pass">
+                    <a href="#" title="" target="_self" class="f-pass">Forgot password?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="SelectUnit" class="form-label mb-1"><small>Enter Captcha Code</small> <span
+                  class="text-danger"> *</span></label>
+                <div class="input-group">
+                  <span class="input-group-text captchaText border-0 w-25 rounded-start-2 text-white justify-content-center fw-bold " id="SelectUnit">{{captchaText}}</span>
+                  <input type="text" class="form-control border-0 text-black focus-ring focus-ring-light rounded-end rounded-0 shadow-none" id="SelectUnit" placeholder="Enter Captcha Code">
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <button type="submit" class="btn btn-primary w-100 rounded-5 text-capitalize fw-medium">Proceed</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="login-container d-flex align-items-center justify-content-center vh-100 position-relative">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-12 col-sm-12 col-xxl-7 col-xl-8 col-lg-8">
+        <div class="login-content z-index-2 position-relative d-block w-100">
+          <img src="../../../assets/images/login/login-logo.png" alt="Login" class="w-auto img-fluid">
+          <h1 class="text-white fw-bold display-3 lh-2 text-start fst-normal mt-7 mb-3">Efficiency starts here.</h1>
+          <h3 class="m-0 p-0 text-white display-6 lh-2">Get ready to accelerate your business with us.</h3>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-xxl-4 col-xl-4 col-lg-4">
+        <div class="login-box text-center bg-white bg-opacity-75 position-relative z-2 px-8 py-6 w-100 rounded-4">
+          <h2 class="text-black h4 fw-bold lh-3 mb-3">Sign in</h2>
+          <p class="lh-3 fw-normal mb-5">Welcome back! Please enter your details</p>
+          <div class="f-section">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="text-start mt-4">
+              <div class="mb-3">
+                <label for="username" class="form-label mb-1"><small>Username</small> <span class="text-danger">*</span></label>
+                <input type="email" formControlName="username" class="form-control border-0 rounded-2 text-black focus-ring focus-ring-light" id="username">
+                <div *ngIf="loginForm.get('username')!.invalid && loginForm.get('username')!.touched" class="text-danger">
+                  <small> Username is required.</small>
+                </div>
+              </div>
+              <div class="mb-3 position-relative">
+                <label for="password" class="form-label mb-1"><small>Password</small> <span class="text-danger">*</span></label>
+                <div class="position-relative">
+                <input type="password" formControlName="password" class="form-control border-0 rounded-2 text-black focus-ring focus-ring-light" id="password" [type]="show ? 'text' : 'password'">
+                <img (click)="togglePassword()" [src]="show ? 'assets/images/login/show-password.png' : 'assets/images/login/hide-password.png'" class="form-append-img cursor-pointer position-absolute end-0 translate-middle-x" loading="lazy" />
+              </div>
+                <div *ngIf="loginForm.get('password')!.invalid && loginForm.get('password')!.touched" class="text-danger">
+                  <div *ngIf="loginForm.get('password')!.errors?.['required']"><small>Password is required.</small></div>
+                  <div *ngIf="loginForm.get('password')!.errors?.['minlength']"><small>Password must be at least 6 characters long.</small></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="selectUnit" class="form-label mb-1"><small>Select Unit</small> <span class="text-danger">*</span></label>
+                <select formControlName="unit" class="form-select border-0 rounded-2 text-black focus-ring focus-ring-light h6" id="selectUnit">
+                  <option value="" disabled>Select your unit</option>
+                  <option value="Marelli Motherson Automotive">Marelli Motherson Automotive</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <div *ngIf="loginForm.get('unit')!.invalid && loginForm.get('unit')!.touched" class="text-danger">
+                <small> Please select a unit.</small>
+                </div>
+              </div>
+              <div class="mb-3 form-check">
+                <div class="d-flex align-items-center justify-content-sm-between">
+                  <div class="fchek">
+                    <input type="checkbox" formControlName="rememberMe" class="form-check-input focus-ring focus-ring-light" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                  </div>
+                  <div class="l-pass">
+                    <a href="#" title="" target="_self" class="f-pass">Forgot password?</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="captcha" class="form-label mb-1"><small>Enter Captcha Code</small> <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text captchaText border-0 w-25 rounded-start-2 text-white justify-content-center fw-bold" id="captcha">{{ captchaText }}</span>
+                  <input type="text" formControlName="captcha" class="form-control border-0 text-black focus-ring focus-ring-light rounded-end rounded-0 shadow-none" id="captcha" placeholder="Enter Captcha Code">
+                </div>
+                <div *ngIf="loginForm.get('captcha')!.invalid && loginForm.get('captcha')!.touched" class="text-danger">
+                <small>Captcha code is required.</small>
+                </div>
+              </div>
+              <div class="mt-5">
+                <button type="submit" class="btn btn-primary w-100 rounded-5 text-capitalize fw-medium" [disabled]="loginForm.invalid">Proceed</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

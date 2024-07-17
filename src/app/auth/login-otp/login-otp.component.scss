@@ -1,0 +1,33 @@
+@import "../../../assets/styles/themes/variables";
+@import "../login/login.component.scss";
+
+    .verification-code-inputs {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      
+        .code-input {
+          width: 3rem;
+          height: 3rem;
+          text-align: center;
+          font-size: 1.5rem;
+          border-radius: 10px;
+          border: 2px solid rgb(89 65 112 / 46%);
+          color: $purple;
+          font-weight: $font-weight-medium;
+          background-color: #EDEBEE;
+      
+          &:focus {
+            outline: 0;
+            box-shadow: none;
+          }
+        }
+    }
+
+    input.ng-invalid.ng-touched {
+      border-color: red !important;
+    }
+
+    .invalid-input {
+      border-color: red !important;
+    }

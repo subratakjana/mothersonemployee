@@ -1,0 +1,179 @@
+<section class="main-content">
+    <app-sidenav></app-sidenav>
+    <app-header></app-header>
+    <div class="main-body py-5 pe-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                        <h4 class="fw-bold h5 m-0">Employee List <a href="javascript:void(0);" class="ms-2"
+                                pTooltip="Enter your username" tooltipPosition="top"><i
+                                    class="bi bi-bookmark primary"></i></a>
+                        </h4>
+                        <div class="heading-right">
+                            <div class="d-flex align-items-center justify-content-end gap-5">
+                                <div class="uploadsec fw-bold lh-md">
+                                    <i class="bi bi-upload h4 fw-bolder me-2"></i> Upload Bulk Photos
+                                </div>
+                                <div class="add-employee">
+                                    <a class="btn btn-primary rounded-5  px-4 py-2 m-0 h5 lh-md fw-medium text-white"
+                                        role="button" aria-disabled="true">Add Employee</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shadow rounded">
+                <div class="tabsec">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-all-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-all" type="button" role="tab" aria-controls="nav-all"
+                                aria-selected="true">All (<span>2500</span>)</button>
+                            <button class="nav-link" id="nav-active-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-active" type="button" role="tab" aria-controls="nav-active"
+                                aria-selected="false">Active (<span>12</span>)</button>
+                            <button class="nav-link" id="nav-inactive-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-inactive" type="button" role="tab" aria-controls="nav-inactive"
+                                aria-selected="false">Inactive (2)</button>
+                            <button class="nav-link" id="nav-draft-tab" data-bs-toggle="tab" data-bs-target="#nav-draft"
+                                type="button" role="tab" aria-controls="nav-draft" aria-selected="false">Draft
+                                (4)</button>
+
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-all" role="tabpanel"
+                            aria-labelledby="nav-all-tab" tabindex="0">
+                            <div class="tabel-sec">
+                                <div class="row">
+                                    <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                                        <p-table #dt1 [value]="customers" styleClass="p-datatable-striped"
+                                            [globalFilterFields]="['id', 'name', 'department', 'designation', 'gender', 'reporting', 'company', 'group', 'status']"
+                                            [(selection)]="selectedCustomers" dataKey="id" [rows]="5" [paginator]="true"
+                                            stateStorage="session" stateKey="statedemo-session">
+                                            <ng-template pTemplate="caption">
+                                                <div class="d-flex justify-content-between p-2">
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                        <p-iconField iconPosition="left">
+                                                            <p-inputIcon>
+                                                                <i class="pi pi-search "></i>
+                                                            </p-inputIcon>
+                                                            <input pInputText type="text"
+                                                                (input)="onGlobalFilter($event)" placeholder="Search" />
+                                                        </p-iconField>
+                                                        <div class="download-icon">
+                                                            <svg-icon src="../../../assets/icons/empolyee/download.svg"></svg-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </ng-template>
+
+                                            <ng-template pTemplate="header">
+                                                <tr>
+                                                    <th pSortableColumn="id">
+                                                        Emp. Id <p-sortIcon field="id" />
+                                                    </th>
+                                                    <th pSortableColumn="name">
+                                                        Emp. Name <p-sortIcon field="name" />
+                                                    </th>
+                                                    <th pSortableColumn="department">
+                                                        Department <p-sortIcon field="department" />
+                                                    </th>
+                                                    <th pSortableColumn="designation">
+                                                        Designation <p-sortIcon field="designation" />
+                                                    </th>
+                                                    <th pSortableColumn="gender">
+                                                        Gender <p-sortIcon field="gender" />
+                                                    </th>
+                                                    <th pSortableColumn="reporting_manager">
+                                                        Reporting Manager <p-sortIcon field="reporting_manager" />
+                                                    </th>
+                                                    <th pSortableColumn="company_doj">
+                                                        Company DOJ <p-sortIcon field="company_doj" />
+                                                    </th>
+                                                    <th pSortableColumn="group_doj">
+                                                        Group DOJ <p-sortIcon field="group_doj" />
+                                                    </th>
+                                                    <th pSortableColumn="status">
+                                                        Status <p-sortIcon field="status" />
+                                                    </th>
+                                                    <th pSortableColumn="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template pTemplate="body" let-customer>
+                                                <tr [pSelectableRow]="customer">
+                                                    <td>
+                                                        <span class="p-column-title"> {{ customer.id }}</span>
+                                                        <strong> {{ customer.id }}</strong>
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title"> {{ customer.name }}</span>
+                                                        {{ customer.name }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.department }}</span>
+                                                        {{ customer.department }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.designation }}</span>
+                                                        {{ customer.designation }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.gender }}</span>
+                                                        {{ customer.gender }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.reporting_manager
+                                                            }}</span>
+                                                        {{ customer.reporting_manager }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.company_doj }}</span>
+                                                        {{ customer.company_doj }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.Group_doj }}</span>
+                                                        {{ customer.Group_doj }}
+                                                    </td>
+                                                    <td>
+                                                        <span class="p-column-title">{{ customer.status }}</span>
+                                                        {{ customer.status }}
+                                                    </td>
+                                                    <td>
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </td>
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template pTemplate="emptymessage">
+                                                <tr>
+                                                    <td colspan="4">No customers found.</td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-active" role="tabpanel" aria-labelledby="nav-active-tab"
+                            tabindex="0">..A.</div>
+                        <div class="tab-pane fade" id="nav-inactive" role="tabpanel" aria-labelledby="nav-inactive-tab"
+                            tabindex="0">.I..</div>
+                        <div class="tab-pane fade" id="nav-draft" role="tabpanel" aria-labelledby="nav-draft-tab"
+                            tabindex="0">..D.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

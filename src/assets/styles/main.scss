@@ -1,0 +1,27 @@
+// main.scss
+
+// Base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Component styles
+@import 'components/buttons';
+@import 'components/forms';
+
+// Layout styles
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+
+// Page styles
+@import 'pages/dashboard';
+@import 'pages/login';
+
+// Theme styles
+@import 'themes/variables';
+@import 'themes/mixins';
+
+// Utility styles
+@import 'utils/functions';
+@import 'utils/placeholders';

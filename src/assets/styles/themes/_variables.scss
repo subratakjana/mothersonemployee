@@ -1,0 +1,166 @@
+$white: #fff;
+$black: #000;
+$purple: #594170;
+$light-blue: #0257eb;
+$green: #008f5e;
+$cyan: #1da5b3;
+$danger: #ff0000;
+$success: #22bb33;
+$warning: #f0ad4e;
+$info: #5bc0de;
+$lighter: #f6f6f6;
+$banner-light-bg: #f4faff;
+$light: #cbcbcb;
+$disabled-bg: #bfbfbf;
+$footer-bg: #f1f2f3;
+$primary-light: #eaeff5;
+$card-border: #e2e9ee;
+$gray-100: #979797;
+$gray-200: #4D4D4D;
+$gray-300: #636363;
+$gray-400: #404040;
+
+
+
+$theme-colors: (
+  primary: $purple,
+  secondary: $green,
+  cyan: $cyan,
+  lighter: $lighter,
+  light: $light,
+  primary-light: $primary-light,
+  primary-medium: $light-blue,
+  gray-medium: $gray-200,
+  gray-dark: $gray-400,
+  white: $white,
+  black: $black,
+  
+);
+
+// Fonts
+$font-family-base: Arial, Helvetica, sans-serif;
+
+// font size
+$font-size-base: 1rem;
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$font-line-height:32px;
+
+// font weight
+$font-weight-base: 400 !default;
+$font-weight-extralight: 100 !default;
+$font-weight-lighter: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: $font-weight-base !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+$font-weight-heavy: 900 !default;
+
+// Font Weight Classes
+@each $class,
+  $weight
+    in (
+      "extralight": $font-weight-extralight,
+      "lighter": $font-weight-lighter,
+      "light": $font-weight-light,
+      "normal": $font-weight-normal,
+      "medium": $font-weight-medium,
+      "semibold": $font-weight-semibold,
+      "bold": $font-weight-bold,
+      "extrabold": $font-weight-extrabold,
+      "heavy": $font-weight-heavy
+    )
+{
+  .font-weight-#{$class} {
+    font-weight: $weight;
+  }
+}
+
+// spacer
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  8: $spacer * 3.5,
+  9: $spacer * 4,
+  10: $spacer * 4.5,
+  11: $spacer * 5,
+  12: $spacer * 6,
+);
+$enable-negative-margins: true;
+
+// modal
+$modal-sm: 400px;
+
+
+// trasnition
+$transition-slow: all 0.25s ease-in-out;
+$transition: all 0.15s ease-in-out;
+$transition-fast: all 0.05s ease-in-out;
+
+$input-bg: $white;
+
+// z-index
+@for $i from 1 through 9 {
+  .z-index-#{$i} {
+    z-index: $i !important;
+  }
+}
+
+// row gap
+@for $i from 0 through 12 {
+  .row-gap-#{$i} {
+    row-gap: map-get($spacers, $i) !important;
+  }
+}
+
+// column gap
+@for $i from 0 through 12 {
+  .column-gap-#{$i} {
+    column-gap: map-get($spacers, $i) !important;
+  }
+}
+
+$utilities: (
+  "opacity": (
+    property: opacity,
+    values: (
+      0: 0,
+      25: .25,
+      50: .5,
+      60: .60,
+      75: .75,
+      80: .80,
+      85: .85,
+      100: 1,
+    )
+  ),
+  "height": (
+      property: height,
+      class: h,
+      values: (
+        15: 15%,
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+      )
+    ),
+
+ );
+
+ 

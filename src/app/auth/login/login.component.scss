@@ -1,0 +1,85 @@
+@import "../../../assets/styles/themes/variables";
+
+//Common
+$overlay-background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black
+$overlay-after-background: rgb(0 0 0 / 65%); // Example overlay after background
+$height-img: 39px;
+$font-size:14px;
+
+.login-container {
+    background: url('../../../assets/images/login/login-banner.png') no-repeat center center;
+    background-size: cover;
+    &::after {
+        background-color: $overlay-after-background;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        content: "";
+    }
+  
+    .login-box {
+      p{
+        color: $gray-100;
+        font-size: $font-size;
+      }
+      .form-append-img{
+        cursor: pointer;
+        top: 15%;
+      }
+      .captchaText{
+        background-image: -webkit-linear-gradient(to left top, #594170, #763a73, #952d6c, #b1195a, #c4053f);
+        background-image: -moz-linear-gradient(to left top, #594170, #763a73, #952d6c, #b1195a, #c4053f);
+        background-image: linear-gradient(to left top, #594170, #763a73, #952d6c, #b1195a, #c4053f);
+        pointer-events: none;
+        user-select: none;
+      }
+  
+    }
+
+    .login-content{
+        img{
+            height: $height-img;
+        }
+    }
+    .f-section {
+        label{
+            color: $gray-200;
+        }
+        input, select{
+            font-size: 14px;
+        }
+        .l-pass{
+            a{
+                font-size: $font-size;
+            }
+        }
+        .f-pass{
+            font-size: $font-size;
+            color: $gray-200;
+        }
+        
+        .fchek {
+            .form-check-input{
+                height: 18px;
+                width: 18px;
+                margin-right: 8px;
+                outline: 0;
+                box-shadow: none;
+            }
+            .form-check-input:checked[type=checkbox]{
+                background-color: $purple;
+                border-color: $purple;            
+                
+            }
+            label{
+            font-size: $font-size;
+            color: $gray-200;
+            cursor: pointer;
+            }
+        }
+    }
+
+  }

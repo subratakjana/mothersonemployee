@@ -1,0 +1,79 @@
+<!-- <div class="login-container d-flex align-items-center justify-content-center vh-100 position-relative">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-12 col-sm-12 col-xxl-7 col-xl-8 col-lg-8">
+          <div class="login-content z-index-2 position-relative d-block w-100">
+            <img src="../../../assets/images/login/login-logo.png" alt="Loign" class="w-auto img-fluid">
+            <h1 class="text-white fw-bold display-3 lh-2 text-start fst-normal mt-7 mb-3">Efficiency starts here.</h1>
+            <h3 class="m-0 p-0 text-white display-6 lh-2">Get ready to accelerate your business with us.</h3>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-xxl-4 col-xl-4 col-lg-4">
+          <div class="login-box text-center bg-white bg-opacity-75 position-relative z-2 px-8 py-6 w-100 rounded-4">
+            <h2 class="text-black h4 fw-bold lh-3 mb-3">Verification Code</h2>
+            <p class="lh-3 fw-normal mb-5 text-body-secondary">Please enter the code sent to <span class="d-block lh-3">Demomotherson.com</span></p>
+            <div class="v-section">
+                <form class="text-center">
+                    <div class="verification-code-inputs">
+                        <input type="text" class="form-control code-input focus-ring focus-ring-light" maxlength="1" />
+                        <input type="text" class="form-control code-input focus-ring focus-ring-light" maxlength="1" />
+                        <input type="text" class="form-control code-input focus-ring focus-ring-light" maxlength="1" />
+                        <input type="text" class="form-control code-input focus-ring focus-ring-light" maxlength="1" />
+                    </div>
+                    <p class="lh-3 fw-normal mb-5 text-body-secondary mt-5 h-50 pb-5"> Resend Verification Code in <span>1:53</span></p>
+                    <div class="mt-5 pt-5">
+                        <button type="submit" class="btn btn-primary w-100 rounded-5 text-capitalize fw-medium">Proceed</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="login-container d-flex align-items-center justify-content-center vh-100 position-relative">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-12 col-sm-12 col-xxl-7 col-xl-8 col-lg-8">
+          <div class="login-content z-index-2 position-relative d-block w-100">
+            <img src="../../../assets/images/login/login-logo.png" alt="Loign" class="w-auto img-fluid">
+            <h1 class="text-white fw-bold display-3 lh-2 text-start fst-normal mt-7 mb-3">Efficiency starts here.</h1>
+            <h3 class="m-0 p-0 text-white display-6 lh-2">Get ready to accelerate your business with us.</h3>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-xxl-4 col-xl-4 col-lg-4">
+          <div class="login-box text-center bg-white bg-opacity-75 position-relative z-2 px-8 py-6 w-100 rounded-4">
+            <h2 class="text-black h4 fw-bold lh-3 mb-3">Verification Code</h2>
+            <p class="lh-3 fw-normal mb-5 text-body-secondary">Please enter the code sent to <span class="d-block lh-3">Demomotherson.com</span></p>
+            <div class="v-section">
+              <form [formGroup]="verificationForm" (ngSubmit)="onSubmit()" class="text-center">
+                <div class="verification-code-inputs">
+                  <input type="text" class="form-control code-input focus-ring focus-ring-light" formControlName="code1"
+                         maxlength="1" [class.invalid-input]="verificationForm.get('code1')?.invalid && (verificationForm.get('code1')?.dirty ?? verificationForm.get('code1')?.touched)"
+                         (keypress)="onlyNumberKey($event)" (keydown)="onKeyDown($event)" (input)="moveFocus($event, 'code2')" />
+                  <input type="text" class="form-control code-input focus-ring focus-ring-light" formControlName="code2"
+                         #code2Input maxlength="1" [class.invalid-input]="verificationForm.get('code2')?.invalid && (verificationForm.get('code2')?.dirty ?? verificationForm.get('code2')?.touched)"
+                         (keypress)="onlyNumberKey($event)" (keydown)="onKeyDown($event)" (input)="moveFocus($event, 'code3')" />
+                  <input type="text" class="form-control code-input focus-ring focus-ring-light" formControlName="code3"
+                         #code3Input maxlength="1" [class.invalid-input]="verificationForm.get('code3')?.invalid && (verificationForm.get('code3')?.dirty ?? verificationForm.get('code3')?.touched)"
+                         (keypress)="onlyNumberKey($event)" (keydown)="onKeyDown($event)" (input)="moveFocus($event, 'code4')" />
+                  <input type="text" class="form-control code-input focus-ring focus-ring-light" formControlName="code4"
+                         #code4Input maxlength="1" [class.invalid-input]="verificationForm.get('code4')?.invalid && (verificationForm.get('code4')?.dirty ?? verificationForm.get('code4')?.touched)"
+                         (keypress)="onlyNumberKey($event)" (keydown)="onKeyDown($event)" />
+                </div>
+             
+                    <p class="lh-3 fw-normal mb-5 text-body-secondary mt-5 h-50 pb-5"> Resend Verification Code in  <span *ngIf="timerRunning">{{ timerDisplay }}</span> <a style="color: inherit;" href="javascript:void(0);" *ngIf="!hideButton" (click)="resendOTP()">Resend OTP</a></p>
+
+                <div class="mt-5 pt-5">
+                  <button type="submit" class="btn btn-primary w-100 rounded-5 text-capitalize fw-medium" [disabled]="verificationForm.invalid">Proceed</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
