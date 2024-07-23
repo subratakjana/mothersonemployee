@@ -1,2 +1,426 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 $purple: #594170;
 $header-bg: #F1C753;
+$mainbody-left: 110px;
+
+//Input Section
+$inputLabelColor: #4D4D4D;
+$inputBorderColor: #CBCCCB;
+$inputSpanColor: #B63533;
+$inputDisbleColor: #F1E9F4;
+$inputplaceholderColor: #CBCCCB;
+$taginfo:#9F9F9E;
+
+$inputLabelWeight: 400;
+
+$inputLabelSize: 15px;
+$inputLabelLheight: 20px;
+$inputBoxHight: 40px;
+$inputRounded: 8px;
+
+.main-content{
+  .main-body{padding-left: $mainbody-left;}
+}
+
+.empfiled {
+  label {
+    font-size: $inputLabelSize;
+    line-height: $inputLabelLheight;
+    color: $inputLabelColor;
+    font-weight: $inputLabelWeight;
+
+    span {
+      color: $inputSpanColor;
+    }
+  }
+  input,
+  select {
+    height: $inputBoxHight;
+    border: 1px solid $inputBorderColor;
+    border-radius: $inputRounded !important;
+    color: $inputLabelColor;
+    font-size: $inputLabelSize;
+    font-weight: $inputLabelWeight;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+      border-color: $purple;
+    }
+
+    &[placeholder] {
+      &::placeholder {
+        color: $inputplaceholderColor;
+        opacity: 1;
+      }
+    }
+
+    &[placeholder] {
+      &::-ms-input-placeholder {
+        color: $inputplaceholderColor;
+        opacity: 1;
+      }
+    }
+
+
+    &[disabled] {
+      background-color: $inputDisbleColor;
+      border-color: transparent;
+      text-align: center;
+      color: $inputLabelColor;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: $inputLabelColor;
+      }
+    }
+  }
+  .input-with-icon {
+    position: relative;
+
+    &::after {
+      content: url('../../icons/form-icon/clipboard-list.svg');
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%) scale(1.3);
+      width: 20px;
+      height: 20px;
+      z-index: 99;
+    }
+  }
+  .select-with-icon {
+    position: relative;
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+        cursor: pointer;
+        background-image: none;
+      &::-ms-expand {
+        display: none;
+      }
+    }
+    &::after {
+        content: url('../../icons/form-icon/chevron-right.svg'); 
+        position: absolute;
+        top: 60%;
+        right: 10px;
+        transform: translateY(-50%) scale(1.1);
+        pointer-events: none;
+        z-index: 99;
+      }
+  }
+  .date-with-icon {
+    position: relative;
+    &::after {
+        content: url('../../icons/form-icon/calendar.svg'); 
+        position: absolute;
+        top: 55%;
+        right: 10px;
+        transform: translateY(-50%) scale(1.1);
+        pointer-events: none;
+        z-index: 99;
+      }
+  }
+}
+.formsebtn{
+  .backpart{
+    font-size: $inputLabelSize;
+    font-weight: $font-weight-semibold;
+    color: $purple;
+    &[disabled] {
+      background-color: $inputDisbleColor;
+      border-color: transparent;
+      text-align: center;
+      color: $purple;
+      opacity: 30%;
+      cursor: not-allowed;
+    }
+  } 
+}
+.formse{
+  .empfiled{
+    input[type="checkbox"] {
+    width: 45px;
+    height: 22px;
+    border-radius: 50px !important;
+    background-color: $purple;
+    margin-right: 10px;
+    }
+  }
+  .form-check-input{
+    border-radius: 0 !important;
+    font-size: $inputLabelSize;
+    &:checked{
+    background-color: $purple;
+    border-color:  $purple;
+    }
+    &:focus{
+      box-shadow: none;
+      outline: 0;
+      border-color: $purple;
+    }
+  }
+  
+}
+
+.progressbar {
+  counter-reset: step;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #646464;
+    
+    &:before {
+      counter-increment: step;
+      content: counter(step);
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border: 2px solid #AE9DB4;
+      display: block;
+      text-align: center;
+      margin: 0 auto 15px auto;
+      border-radius: 50%;
+      background-color: #AE9DB4;
+      font-size: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #AE9DB4;
+      top: 11px;
+      left: 50%;
+      z-index: -1;
+    }
+    
+    &:last-child:after {
+      content: none;
+    }
+
+    &.active {
+      color: #563d7c;
+      font-size: 16px;
+      font-weight: 600;
+      
+      &:before {
+        border-color: #594170;
+      background-color: #fff;
+      border-width: 5px;
+      }
+
+      &:after {
+        background-color: #563d7c;
+      }
+    }
+  }
+}
+
+.profile-image-upload {
+    .form-group {
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .image-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed #6c757d;
+        border-radius: 0.25rem;
+        height: 250px;
+        width: 250px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          max-height: 100%;
+          max-width: 100%;
+        }
+
+        .placeholder {
+          text-align: center;
+
+          i {
+            font-size: 3rem;
+            color: #6c757d;
+          }
+
+          p {
+            margin: 0;
+            color: #6c757d;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .form-control-file {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+    .profile-image-box{
+      border: 1px solid $inputBorderColor;
+      border-radius: $inputRounded;
+      padding: 15px;
+      .profile-inside{
+        border: 2px dashed #AC9CBB;
+        padding: 30px 10px;
+      }
+      .profileimg{
+        height: 80px;
+        width: 80px;
+        border-radius: 100px;
+        object-fit: cover;
+      }
+      .uploadimg  input{display: none;}
+      .upload-button{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: ease-in-out .3s;
+        background-color: #F3F3F3;
+        cursor: pointer;
+        &:hover{
+          background-color: $purple;
+           svg {
+            path{stroke: $white;}
+           }
+        }
+      }
+    }
+}
+
+.taginfo{
+   .breadcrumb{
+    .breadcrumb-item{
+      color: $taginfo;
+      font-size: $inputLabelSize;
+      text-transform: uppercase;
+      &::before{
+        content: '|';
+        color: $taginfo;
+      }
+      &:first-child{
+        &::before{content: none; }
+      }
+    }
+   }
+}
+
+.tableview{
+
+.table-responsive::-webkit-scrollbar {
+  height: 6px; 
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: $purple;
+  border-radius: 10px;
+}
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background-color: $purple;
+}
+  border: 1px solid $inputBorderColor !important;
+  input{
+    &:focus, &:active{
+      box-shadow: none;
+      border: none;
+    }
+  }
+  table{
+   border: none;
+  }
+  thead{
+    th{
+      background-color: #1A1919;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 10px 15px;
+      white-space: nowrap;
+      &:last-child{
+        text-align: center;
+      }
+    }    
+  }
+  tbody{
+    tr{
+      &:nth-of-type(odd) *{
+        background-color: #F4EFF4;
+      }
+    }
+    td{
+    border: none;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px 15px;
+    white-space: nowrap;
+    &:last-child{
+      text-align: center;
+    }    
+    }
+  }
+  tfoot{
+    tr{
+    box-shadow: 0px -8px 20px rgb(65 65 65 / 20%);
+    td{
+      background-color: #fff;
+      border-top: 1px solid #CBCCCB;      
+      padding: 10px 20px;
+      border-bottom: none;
+    }
+    }
+  }
+}
+.offcanvas.offcanvas-end{
+  width: 800px !important;
+}
+.upload-container{
+  .file-upload {
+    display: none;
+  }
+  .file-upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    color: #5a3b75;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.3s ease;
+    padding: 12px 12px;
+    span{
+      color: #999;
+      padding-left: 5px;
+    }
+    &:hover{
+      border-color: #5a3b75;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,24 +8,25 @@ import { EmployeeModule } from './employee-section/employee.module';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // EmployeeListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
     SharedModule,
-    EmployeeModule,
     ReactiveFormsModule,
     // AngularSvgIconModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    EmployeeModule
   ],
   providers: [
     provideClientHydration()
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {

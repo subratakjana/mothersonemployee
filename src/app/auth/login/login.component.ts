@@ -58,8 +58,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      //console.log(this.loginForm.value);
-      // Perform login action here
       this.router.navigate(['/login-otp']);
     } else {
       console.log('Form is not valid');

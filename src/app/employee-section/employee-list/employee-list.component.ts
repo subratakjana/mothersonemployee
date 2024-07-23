@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Table } from 'primeng/table';
-
-
-
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-list',
@@ -22,7 +20,7 @@ export class EmployeeListComponent implements OnInit {
   searchValue: any;
 
   constructor() {
-
+    
   }
 
   ngOnInit(): void {
@@ -33,8 +31,8 @@ export class EmployeeListComponent implements OnInit {
         department: 'SWS',
         designation: 'Associate Project Manager',
         gender: 'Male',
-        reporting_manager : 'Alok Aman',
-        company_doj : '05-18-2010',
+        reporting_manager: 'Alok Aman',
+        company_doj: '05-18-2010',
         Group_doj: '05-18-2010',
         status: 'Inactive'
       },
@@ -44,9 +42,9 @@ export class EmployeeListComponent implements OnInit {
         department: 'SWS',
         designation: 'Senior Module Leader',
         gender: 'Male',
-        reporting_manager : 'Sachin Gupta',
-        company_doj : '10-25-2010',
-        Group_doj: '10-25-2010',        
+        reporting_manager: 'Sachin Gupta',
+        company_doj: '10-25-2010',
+        Group_doj: '10-25-2010',
         status: 'Active'
       },
       {
@@ -55,8 +53,8 @@ export class EmployeeListComponent implements OnInit {
         department: 'Materials',
         designation: 'Project Manager',
         gender: 'Male',
-        reporting_manager : 'Virender Devkaran',
-        company_doj : '07-04-2011',
+        reporting_manager: 'Virender Devkaran',
+        company_doj: '07-04-2011',
         Group_doj: '07-04-2011',
         status: 'Draft'
       },
@@ -66,8 +64,8 @@ export class EmployeeListComponent implements OnInit {
         department: 'SAP',
         designation: 'Assistant General Manager',
         gender: 'Male',
-        reporting_manager : 'Pramod Kumar',
-        company_doj : '07-15-2013',
+        reporting_manager: 'Pramod Kumar',
+        company_doj: '07-15-2013',
         Group_doj: '07-15-2013',
         status: 'Draft'
       },
@@ -77,8 +75,8 @@ export class EmployeeListComponent implements OnInit {
         department: 'SWS',
         designation: 'Associate Project Manager',
         gender: 'Male',
-        reporting_manager : 'Alok Aman',
-        company_doj : '05-18-2010',
+        reporting_manager: 'Alok Aman',
+        company_doj: '05-18-2010',
         Group_doj: '05-18-2010',
         status: 'Inactive'
       },
@@ -88,9 +86,9 @@ export class EmployeeListComponent implements OnInit {
         department: 'SWS',
         designation: 'Senior Module Leader',
         gender: 'Male',
-        reporting_manager : 'Sachin Gupta',
-        company_doj : '10-25-2010',
-        Group_doj: '10-25-2010',        
+        reporting_manager: 'Sachin Gupta',
+        company_doj: '10-25-2010',
+        Group_doj: '10-25-2010',
         status: 'Active'
       },
       {
@@ -99,8 +97,8 @@ export class EmployeeListComponent implements OnInit {
         department: 'Materials',
         designation: 'Project Manager',
         gender: 'Male',
-        reporting_manager : 'Virender Devkaran',
-        company_doj : '07-04-2011',
+        reporting_manager: 'Virender Devkaran',
+        company_doj: '07-04-2011',
         Group_doj: '07-04-2011',
         status: 'Draft'
       },
@@ -110,8 +108,8 @@ export class EmployeeListComponent implements OnInit {
         department: 'SAP',
         designation: 'Assistant General Manager',
         gender: 'Male',
-        reporting_manager : 'Pramod Kumar',
-        company_doj : '07-15-2013',
+        reporting_manager: 'Pramod Kumar',
+        company_doj: '07-15-2013',
         Group_doj: '07-15-2013',
         status: 'Draft'
       }
@@ -141,6 +139,10 @@ export class EmployeeListComponent implements OnInit {
   onGlobalFilter(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     this.dt1.filterGlobal(inputElement.value, 'contains');
+  }
+
+  onSubmit() {
+   
   }
 }
 

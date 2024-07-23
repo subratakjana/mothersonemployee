@@ -1,0 +1,458 @@
+<section class="main-content">
+    <app-sidenav></app-sidenav>
+    <app-header></app-header>
+    <div class="main-body py-5 pe-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                        <h4 class="fw-bold h5 m-0">Add Employee</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shadow rounded p-5">
+                <div class="progressBar mb-5 pb-3">
+                    <ul class="progressbar">
+                        <li *ngFor="let step of steps; let i = index" [class.active]="i <= currentStep">
+                            {{ step }}
+                        </li>
+                    </ul>
+                </div>
+                <form name="FormName" action="#" class="empclass" autocomplete="off">
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Asset Detail</h3>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <div class="taginfo mb-4">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">Emp ID</li>
+                                            <li class="breadcrumb-item">UNIT ID</li>
+                                            <li class="breadcrumb-item">Emp Name</li>
+                                            <li class="breadcrumb-item" aria-current="page">DOB</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Vehicle" class="form-label">Vehicle</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Vehicle"
+                                                        placeholder="Vehicle">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Vehicleno" class="form-label">Vehicle no.</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Vehicleno"
+                                                        placeholder="Vehicle no.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Licenseno" class="form-label">License no.</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Licenseno"
+                                                        placeholder="License no.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Transportcode" class="form-label">Transport code</label>
+                                                <div class="input-group input-with-icon">
+                                                    <input class="form-control" list="Transportcodelist" id="Transportcode"
+                                                        placeholder="Start typing to select">
+                                                    <datalist id="Transportcodelist">
+                                                        <option value="San Francisco">
+                                                        <option value="New York">
+                                                        <option value="Seattle">
+                                                        <option value="Los Angeles">
+                                                        <option value="Chicago">
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-0">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Documents Upload</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Aadhaar" class="form-label">Aadhaar</label>
+                                                <div class="input-group">
+                                                    <div class="upload-container">
+                                                        <input type="file" id="file-upload" class="file-upload">
+                                                        <label for="file-upload" class="file-upload-label">
+                                                            Click to upload <span> or drag and drop</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="file-pan" class="form-label">PAN</label>
+                                                <div class="input-group">
+                                                    <div class="upload-container">
+                                                        <input type="file" id="file-pan" class="file-upload">
+                                                        <label for="file-pan" class="file-upload-label">
+                                                            Click to upload <span> or drag and drop</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="file-uan" class="form-label">UAN</label>
+                                                <div class="input-group">
+                                                    <div class="upload-container">
+                                                        <input type="file" id="file-uan" class="file-upload">
+                                                        <label for="file-uan" class="file-upload-label">
+                                                            Click to upload <span> or drag and drop</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="file-pran" class="form-label">PRAN</label>
+                                                <div class="input-group">
+                                                    <div class="upload-container">
+                                                        <input type="file" id="file-pran" class="file-upload">
+                                                        <label for="file-pran" class="file-upload-label">
+                                                            Click to upload <span> or drag and drop</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="file-bank" class="form-label">Bank A/c details</label>
+                                                <div class="input-group">
+                                                    <div class="upload-container">
+                                                        <input type="file" id="file-bank" class="file-upload">
+                                                        <label for="file-bank" class="file-upload-label">
+                                                            Click to upload <span> or drag and drop</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
+                                    <div class="backclass">
+                                        <button class="backpart text-decoration-none border-0 bg-white"
+                                            (click)="previousStep()" [disabled]="currentStep === 0">Back</button>
+                                    </div>
+                                    <div class="savesec d-flex align-items-center justify-content-end gap-3">
+                                        <button type="button"
+                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold">Cancle</button>
+                                        <button type="button" [routerLink]="['/employee-section/personal-details']"
+                                            class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="nextStep()" [disabled]="currentStep === steps.length - 1">Save &
+                                            Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body px-5 pt-0">
+                        <h5 class="mb-4 fw-bolder fs-5 mt-0" id="offcanvasRightLabel">Add Nomination</h5>
+                        <form name="Nomination" action="#" class="empclass" autocomplete="off">
+                            <div class="formse mb-0">
+                                <div class="row gap-0">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Nomineename" class="form-label">Nominee name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Nomineename"
+                                                        placeholder="Nominee name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Gratuity" class="form-label">PF/ESI/Gratuity<span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Gratuity">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Relation" class="form-label">Relation<span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Relation">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Share" class="form-label">Share %age<span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Share">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-5 text-capitalize fw-medium btn-lg px-5">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="addreference"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body px-5 pt-0">
+                        <h5 class="mb-4 fw-bolder fs-5 mt-0" id="offcanvasRightLabel">Add Reference</h5>
+                        <form name="Nomination" action="#" class="empclass" autocomplete="off">
+                            <div class="formse mb-0">
+                                <div class="row gap-0">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Referencename" class="form-label">Reference name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Referencename"
+                                                        placeholder="Reference name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Relation" class="form-label">Relation</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Relation">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Referenceemail" class="form-label">Reference email</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Referenceemail"
+                                                        placeholder="Reference email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Address1" class="form-label">Address (Line 1)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Address1"
+                                                        placeholder="Address (Line 1)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Address2" class="form-label">Address (Line 2)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Address2"
+                                                        placeholder="Address (Line 2)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Address3" class="form-label">Address (Line 3)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Address2"
+                                                        placeholder="Address (Line 3)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Country" class="form-label">Country</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Country">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="State" class="form-label">State</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="State">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="City" class="form-label">City</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="City">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Pincode" class="form-label">Pincode</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Pincode"
+                                                        placeholder="Pincode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Mobile" class="form-label">Mobile no.</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Mobile"
+                                                        placeholder="Mobile no.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Remarks" class="form-label">Remarks</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Remarks"
+                                                        placeholder="Remarks">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-5 text-capitalize fw-medium btn-lg px-5">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

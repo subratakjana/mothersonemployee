@@ -1,0 +1,389 @@
+<section class="main-content">
+    <app-sidenav></app-sidenav>
+    <app-header></app-header>
+    <div class="main-body py-5 pe-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                        <h4 class="fw-bold h5 m-0">Add Employee</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shadow rounded p-5">
+                <div class="progressBar mb-5 pb-3">
+                    <ul class="progressbar">
+                        <li *ngFor="let step of steps; let i = index" [class.active]="i <= currentStep">
+                            {{ step }}
+                        </li>
+                    </ul>
+                </div>
+                <form name="FormName" action="#" class="empclass" autocomplete="off">
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Employee Reference</h3>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <div class="taginfo mb-4">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">Emp ID</li>
+                                            <li class="breadcrumb-item">UNIT ID</li>
+                                            <li class="breadcrumb-item">Emp Name</li>
+                                            <li class="breadcrumb-item" aria-current="page">DOB</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-12">
+                                        <div class="tableview overflow-hidden rounded-3">
+                                            <div class="d-flex px-4 py-1 align-items-center" role="search">
+                                                <svg-icon style="transform: scale(1.3);"
+                                                    src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
+                                                <input class="form-control border-0 fs-6 ps-2" type="search"
+                                                    placeholder="Search" aria-label="Search">
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table rounded-3 mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </th>
+                                                            <th scope="col">Company</th>
+                                                            <th scope="col">Years of experience</th>
+                                                            <th scope="col">Group experience</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </td>
+                                                            <td>Infosys</td>
+                                                            <td>2</td>
+                                                            <td>No</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </td>
+                                                            <td>MIND (Motherson)</td>
+                                                            <td>3</td>
+                                                            <td>Yes</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </td>
+                                                            <td>MIND (Motherson)</td>
+                                                            <td>1</td>
+                                                            <td>Yes</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <div class="fw-semibold text-primary fs-6 cursoer"
+                                                                    data-bs-toggle="offcanvas" data-bs-target="#addexp"
+                                                                    aria-controls="addexp" style="cursor: pointer;"><i
+                                                                        class="bi bi-plus-lg text-primary fw-semibold fs-5"></i>
+                                                                    Add Experience</div>
+                                                            </td>
+                                                            <td class="text-end"><small class="text-end"><strong>Years
+                                                                        of group experience : 4</strong></small></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-0">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Education</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-12">
+                                        <div class="tableview overflow-hidden rounded-3">
+                                            <div class="d-flex px-4 py-1 align-items-center" role="search">
+                                                <svg-icon style="transform: scale(1.3);"
+                                                    src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
+                                                <input class="form-control border-0 fs-6 ps-2" type="search"
+                                                    placeholder="Search" aria-label="Search">
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table rounded-3 mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </th>
+                                                            <th scope="col">Qualification</th>
+                                                            <th scope="col">Course</th>
+                                                            <th scope="col">University</th>
+                                                            <th scope="col">CGPA</th>
+                                                            <th scope="col">Passing Year</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </td>
+                                                            <td>10th</td>
+                                                            <td>NA</td>
+                                                            <td>Delhi Public School</td>
+                                                            <td>6.4</td>
+                                                            <td>2012</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </td>
+                                                            <td>12th</td>
+                                                            <td>Commerce</td>
+                                                            <td>Delhi Public School</td>
+                                                            <td>7.2</td>
+                                                            <td>2014</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td scope="col text-center">
+                                                                <div class="text-center">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                </div>
+                                                            </td>
+                                                            <td>Graduation</td>
+                                                            <td>B.Tech</td>
+                                                            <td>Indraprastha University</td>
+                                                            <td>8.3</td>
+                                                            <td>2018</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="7">
+                                                                <div class="fw-semibold text-primary fs-6 cursoer"
+                                                                    data-bs-toggle="offcanvas"
+                                                                    data-bs-target="#addeducation"
+                                                                    aria-controls="addeducation"
+                                                                    style="cursor: pointer;"><i
+                                                                        class="bi bi-plus-lg text-primary fw-semibold fs-5"></i>
+                                                                    Add Education</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
+                                    <div class="backclass">
+                                        <button class="backpart text-decoration-none border-0 bg-white"
+                                            (click)="previousStep()" [disabled]="currentStep === 0">Back</button>
+                                    </div>
+                                    <div class="savesec d-flex align-items-center justify-content-end gap-3">
+                                        <button type="button"
+                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold">Cancle</button>
+                                        <button type="button" [routerLink]="['/employee-section/personal-details']"
+                                            class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="nextStep()" [disabled]="currentStep === steps.length - 1">Save &
+                                            Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="addexp">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body px-5 pt-0">
+                        <h5 class="mb-4 fw-bolder fs-5 mt-0" id="offcanvasRightLabel">Add Experience</h5>
+                        <form name="Add Experience" action="#" class="empclass" autocomplete="off">
+                            <div class="formse mb-0">
+                                <div class="row gap-0">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Companyname" class="form-label">Company name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Companyname"
+                                                        placeholder="Company name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Yearsexperience" class="form-label">Years of
+                                                    experience</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Yearsexperience"
+                                                        placeholder="Years of experience">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled d-flex align-items-center h-100">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                    id="expSwitchCheckChecked" checked>
+                                                <label class="form-check-label" for="expSwitchCheckChecked">Group
+                                                    experience</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="mt-0">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-5 text-capitalize fw-medium btn-lg px-5">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="addeducation">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body px-5 pt-0">
+                        <h5 class="mb-4 fw-bolder fs-5 mt-0" id="offcanvasRightLabel">Add Education</h5>
+                        <form name="Add Education" action="#" class="empclass" autocomplete="off">
+                            <div class="formse mb-0">
+                                <div class="row gap-0">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Qualification" class="form-label">Qualification</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Qualification">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Course" class="form-label">Course</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Course"
+                                                        placeholder="Course">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="University" class="form-label">University</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="University">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="CGPA" class="form-label">CGPA</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="CGPA"
+                                                        placeholder="CGPA">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Passingyear" class="form-label">Passing year</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Passingyear"
+                                                        placeholder="Passing year">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-5 text-capitalize fw-medium btn-lg px-5">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

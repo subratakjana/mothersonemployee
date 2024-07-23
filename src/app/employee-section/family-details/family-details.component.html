@@ -1,0 +1,886 @@
+<section class="main-content">
+    <app-sidenav></app-sidenav>
+    <app-header></app-header>
+    <div class="main-body py-5 pe-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                        <h4 class="fw-bold h5 m-0">Add Employee</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shadow rounded p-5">
+                <div class="progressBar mb-5 pb-3">
+                    <ul class="progressbar">
+                        <li *ngFor="let step of steps; let i = index" [class.active]="i <= currentStep">
+                            {{ step }}
+                        </li>
+                    </ul>
+                </div>
+                <form name="FormName" action="#" class="empclass" autocomplete="off">
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Family Detail</h3>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <div class="taginfo mb-4">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">Emp ID</li>
+                                            <li class="breadcrumb-item">UNIT ID</li>
+                                            <li class="breadcrumb-item">Emp Name</li>
+                                            <li class="breadcrumb-item" aria-current="page">DOB</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Fathersname" class="form-label">Father’s name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Fathersname"
+                                                        placeholder="Father’s name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="FathersDOB" class="form-label">Father’s DOB</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="FathersDOB">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Mothersname" class="form-label">Mother’s name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Mothersname"
+                                                        placeholder="Mother’s name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="MothersDOB" class="form-label">Mother’s DOB</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="MothersDOB">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled d-flex align-items-center h-100">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                    id="marriedSwitchCheckChecked" checked>
+                                                <label class="form-check-label"
+                                                    for="marriedSwitchCheckChecked">Married</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Weddinganniversary" class="form-label">Wedding
+                                                    anniversary</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="Weddinganniversary">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="Medicalfrom" class="form-label">Medical from</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="Medicalfrom">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="Medicalto" class="form-label">Medical to</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="Medicalto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="pSelf" class="form-label">Extra premium (Self)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="pSelf"
+                                                        placeholder="Extra premium (Self)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="pParent" class="form-label">Extra premium (Parent)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="pParent"
+                                                        placeholder="Extra premium (Parent)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="ptSelf" class="form-label">Extra premium top-up
+                                                    (Self)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="ptSelf"
+                                                        placeholder="Extra premium top-up (Self)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="ptParent" class="form-label">Extra premium top-up
+                                                    (Parent)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="ptParent"
+                                                        placeholder="Extra premium top-up (Parent)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Spouse Detail</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_name" class="form-label">Spouse name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="s_name"
+                                                        placeholder="Spouse name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_Gender" class="form-label">Gender <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="s_Gender">
+                                                        <option selected>Select</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Fmale</option>
+                                                        <option value="3">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_dob" class="form-label">DOB</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="s_dob">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="s_Medicalfrom" class="form-label">Medical
+                                                            from</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="s_Medicalfrom">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="s_Medicalto" class="form-label">Medical to</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="s_Medicalto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">1st Child Detail</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_name" class="form-label">Spouse name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="s_name"
+                                                        placeholder="Spouse name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_Gender" class="form-label">Gender <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="s_Gender">
+                                                        <option selected>Select</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Fmale</option>
+                                                        <option value="3">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_dob" class="form-label">DOB</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="s_dob">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="s_Medicalfrom" class="form-label">Medical
+                                                            from</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="s_Medicalfrom">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="s_Medicalto" class="form-label">Medical to</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="s_Medicalto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">2nd Child Detail</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_name" class="form-label">Spouse name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="s_name"
+                                                        placeholder="Spouse name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_Gender" class="form-label">Gender <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="s_Gender">
+                                                        <option selected>Select</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Fmale</option>
+                                                        <option value="3">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="s_dob" class="form-label">DOB</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="s_dob">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="s_Medicalfrom" class="form-label">Medical
+                                                            from</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="s_Medicalfrom">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="empfiled">
+                                                    <div class="input-group mb-4">
+                                                        <label for="s_Medicalto" class="form-label">Medical to</label>
+                                                        <div class="input-group date-with-icon">
+                                                            <input type="text" class="form-control" id="s_Medicalto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Employee Reference</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-12">
+                                        <div class="tableview overflow-hidden rounded-3">
+                                            <div class="d-flex px-4 py-1 align-items-center" role="search">
+                                                <svg-icon style="transform: scale(1.3);"
+                                                    src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
+                                                <input class="form-control border-0 fs-6 ps-2" type="search"
+                                                    placeholder="Search" aria-label="Search">
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table rounded-3 mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Relation</th>
+                                                            <th scope="col">Email</th>
+                                                            <th scope="col">Address (Line 1)</th>
+                                                            <th scope="col">Address (Line 2)</th>
+                                                            <th scope="col">Address (Line 3)</th>
+                                                            <th scope="col">Country</th>
+                                                            <th scope="col">State</th>
+                                                            <th scope="col">City</th>
+                                                            <th scope="col">PIN</th>
+                                                            <th scope="col">Mobile no.</th>
+                                                            <th scope="col">Remarks</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><strong>John Doe</strong></td>
+                                                            <td>Friend</td>
+                                                            <td>email.com</td>
+                                                            <td>New City Lane</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>India</td>
+                                                            <td>Delhi</td>
+                                                            <td>New Delhi</td>
+                                                            <td>110013</td>
+                                                            <td>9876543210</td>
+                                                            <td>9876543210</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>John Doe</strong></td>
+                                                            <td>Friend</td>
+                                                            <td>email.com</td>
+                                                            <td>New City Lane</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>India</td>
+                                                            <td>Delhi</td>
+                                                            <td>New Delhi</td>
+                                                            <td>110013</td>
+                                                            <td>9876543210</td>
+                                                            <td>9876543210</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>John Doe</strong></td>
+                                                            <td>Friend</td>
+                                                            <td>email.com</td>
+                                                            <td>New City Lane</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>India</td>
+                                                            <td>Delhi</td>
+                                                            <td>New Delhi</td>
+                                                            <td>110013</td>
+                                                            <td>9876543210</td>
+                                                            <td>9876543210</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>John Doe</strong></td>
+                                                            <td>Friend</td>
+                                                            <td>email.com</td>
+                                                            <td>New City Lane</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>India</td>
+                                                            <td>Delhi</td>
+                                                            <td>New Delhi</td>
+                                                            <td>110013</td>
+                                                            <td>9876543210</td>
+                                                            <td>9876543210</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>John Doe</strong></td>
+                                                            <td>Friend</td>
+                                                            <td>email.com</td>
+                                                            <td>New City Lane</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>Lajpat Nagar</td>
+                                                            <td>India</td>
+                                                            <td>Delhi</td>
+                                                            <td>New Delhi</td>
+                                                            <td>110013</td>
+                                                            <td>9876543210</td>
+                                                            <td>9876543210</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="13">
+                                                                <div class="fw-semibold text-primary fs-6 cursoer"
+                                                                    data-bs-toggle="offcanvas"
+                                                                    data-bs-target="#addreference"
+                                                                    aria-controls="addreference"
+                                                                    style="cursor: pointer;"><i
+                                                                        class="bi bi-plus-lg text-primary fw-semibold fs-5"></i>
+                                                                    Add Reference</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse mb-0">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Nomination Detail</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-12">
+                                        <div class="tableview overflow-hidden rounded-3">
+                                            <div class="d-flex px-4 py-1 align-items-center" role="search">
+                                                <svg-icon style="transform: scale(1.3);"
+                                                    src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
+                                                <input class="form-control border-0 fs-6 ps-2" type="search"
+                                                    placeholder="Search" aria-label="Search">
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table rounded-3 mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Nominee Name</th>
+                                                            <th scope="col">Nominee Relation</th>
+                                                            <th scope="col">PF/ESI/Gratuity</th>
+                                                            <th scope="col">Share %age</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><strong>John Doe</strong></td>
+                                                            <td>Brother</td>
+                                                            <td>PF</td>
+                                                            <td>25%</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Jenny Doe</strong></td>
+                                                            <td>Sister</td>
+                                                            <td>PF</td>
+                                                            <td>75%</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Sam Doe</strong></td>
+                                                            <td>Brother</td>
+                                                            <td>Gratuity</td>
+                                                            <td>25%</td>
+                                                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="5">
+                                                                <div class="fw-semibold text-primary fs-6 cursoer"
+                                                                    data-bs-toggle="offcanvas"
+                                                                    data-bs-target="#offcanvasRight"
+                                                                    aria-controls="offcanvasRight"
+                                                                    style="cursor: pointer;"><i
+                                                                        class="bi bi-plus-lg text-primary fw-semibold fs-5"></i>
+                                                                    Add Nominee</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
+                                    <div class="backclass">
+                                        <button class="backpart text-decoration-none border-0 bg-white"
+                                            (click)="previousStep()" [disabled]="currentStep === 0">Back</button>
+                                    </div>
+                                    <div class="savesec d-flex align-items-center justify-content-end gap-3">
+                                        <button type="button"
+                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold">Cancle</button>
+                                        <button type="button" [routerLink]="['/employee-section/personal-details']"
+                                            class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="nextStep()" [disabled]="currentStep === steps.length - 1">Save &
+                                            Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body px-5 pt-0">
+                        <h5 class="mb-4 fw-bolder fs-5 mt-0" id="offcanvasRightLabel">Add Nomination</h5>
+                        <form name="Nomination" action="#" class="empclass" autocomplete="off">
+                            <div class="formse mb-0">
+                                <div class="row gap-0">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Nomineename" class="form-label">Nominee name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Nomineename"
+                                                        placeholder="Nominee name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Gratuity" class="form-label">PF/ESI/Gratuity<span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Gratuity">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Relation" class="form-label">Relation<span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Relation">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Share" class="form-label">Share %age<span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Share">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-5 text-capitalize fw-medium btn-lg px-5">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="addreference"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body px-5 pt-0">
+                        <h5 class="mb-4 fw-bolder fs-5 mt-0" id="offcanvasRightLabel">Add Reference</h5>
+                        <form name="Nomination" action="#" class="empclass" autocomplete="off">
+                            <div class="formse mb-0">
+                                <div class="row gap-0">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Referencename" class="form-label">Reference name</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Referencename"
+                                                        placeholder="Reference name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Relation" class="form-label">Relation</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Relation">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Referenceemail" class="form-label">Reference email</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Referenceemail"
+                                                        placeholder="Reference email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Address1" class="form-label">Address (Line 1)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Address1"
+                                                        placeholder="Address (Line 1)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Address2" class="form-label">Address (Line 2)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Address2"
+                                                        placeholder="Address (Line 2)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Address3" class="form-label">Address (Line 3)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Address2"
+                                                        placeholder="Address (Line 3)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Country" class="form-label">Country</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="Country">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="State" class="form-label">State</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="State">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="City" class="form-label">City</label>
+                                                <div class="input-group select-with-icon">
+                                                    <select class="form-select" id="City">
+                                                        <option selected>Select</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Pincode" class="form-label">Pincode</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Pincode"
+                                                        placeholder="Pincode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Mobile" class="form-label">Mobile no.</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Mobile"
+                                                        placeholder="Mobile no.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Remarks" class="form-label">Remarks</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Remarks"
+                                                        placeholder="Remarks">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-5 text-capitalize fw-medium btn-lg px-5">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

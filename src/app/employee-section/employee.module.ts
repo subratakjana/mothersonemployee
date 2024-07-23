@@ -12,16 +12,41 @@ import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { GeneralDetailsComponent } from './general-details/general-details.component';
+import { CalendarModule } from 'primeng/calendar';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { BankPfEsiComponent } from './bank-pf-esi/bank-pf-esi.component';
+import { ContactAddressComponent } from './contact-address/contact-address.component';
+import { FamilyDetailsComponent } from './family-details/family-details.component';
+import { ExperienceEducationComponent } from './experience-education/experience-education.component';
+import { AssetsDocsComponent } from './assets-docs/assets-docs.component';
+import { SalaryComponent } from './salary/salary.component';
 
 
 const routes: Routes = [
   { path: 'employee-list', component: EmployeeListComponent },
+  { path: 'employee/general-details', component: GeneralDetailsComponent },
+  { path: 'employee/personal-details', component: PersonalDetailsComponent },
+  { path: 'employee/account-details', component: BankPfEsiComponent },
+  { path: 'employee/contact-details', component: ContactAddressComponent },
+  { path: 'employee/family-details', component: FamilyDetailsComponent },
+  { path: 'employee/experience-education-details', component: ExperienceEducationComponent },
+  { path: 'employee/assets-docs-details', component: AssetsDocsComponent },
+  { path: 'employee/salary-details', component: SalaryComponent },
 ];
 
 @NgModule({
   declarations: [
-    EmployeeListComponent
+    EmployeeListComponent,
+    GeneralDetailsComponent,
+    PersonalDetailsComponent,
+    BankPfEsiComponent,
+    ContactAddressComponent,
+    FamilyDetailsComponent,
+    ExperienceEducationComponent,
+    AssetsDocsComponent,
+    SalaryComponent
   ],
   imports: [
     CommonModule,
@@ -36,9 +61,14 @@ const routes: Routes = [
     TooltipModule,
     TabViewModule,
     FormsModule,
-    AngularSvgIconModule
+    AngularSvgIconModule,
+    ReactiveFormsModule,
+    CalendarModule
   ],
   exports: [RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class EmployeeModule { }
+export class EmployeeModule { 
+
+  
+}

@@ -1,0 +1,192 @@
+<section class="main-content">
+    <app-sidenav></app-sidenav>
+    <app-header></app-header>
+    <div class="main-body py-5 pe-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                        <h4 class="fw-bold h5 m-0">Add Employee</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shadow rounded p-5">
+                <div class="progressBar mb-5 pb-3">
+                    <ul class="progressbar">
+                        <li *ngFor="let step of steps; let i = index" [class.active]="i <= currentStep">
+                            {{ step }}
+                        </li>
+                    </ul>
+                </div>
+                <form name="FormName" action="#" class="empclass" autocomplete="off">
+                    <div class="formse mb-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <h3 class="mb-3 fw-bolder fs-6">Salary Detail</h3>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-12">
+                                <div class="taginfo mb-4">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">Emp ID</li>
+                                            <li class="breadcrumb-item">UNIT ID</li>
+                                            <li class="breadcrumb-item">Emp Name</li>
+                                            <li class="breadcrumb-item" aria-current="page">DOB</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="row gap-0">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Salaryrevisiondate" class="form-label">Salary revision date</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="Salaryrevisiondate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Salaryeffective" class="form-label">Salary effective date form</label>
+                                                <div class="input-group date-with-icon">
+                                                    <input type="text" class="form-control" id="Salaryeffective">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                                        <div class="empfiled">
+                                            <div class="input-group mb-4">
+                                                <label for="Salarystructure" class="form-label">Salary structure ID</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="Salarystructure"
+                                                        placeholder="Salary structure ID">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gap-0">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="tableview overflow-hidden rounded-3 mb-4">
+                                    <div class="table-responsive">
+                                        <table class="table rounded-3 mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Company ID</th>
+                                                    <th scope="col">Company Description</th>
+                                                    <th scope="col">Calc Base</th>
+                                                    <th scope="col">Type (P.D)</th>
+                                                    <th scope="col">Calc Period</th>
+                                                    <th scope="col">Value</th>
+                                                    <th scope="col">Priority</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>3123</td>
+                                                    <td>SMIIEL</td>
+                                                    <td>23223</td>
+                                                    <td>P</td>
+                                                    <td>1</td>
+                                                    <td>0.00</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3123</td>
+                                                    <td>SMIIEL</td>
+                                                    <td>23223</td>
+                                                    <td>P</td>
+                                                    <td>1</td>
+                                                    <td>0.00</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3123</td>
+                                                    <td>SMIIEL</td>
+                                                    <td>23223</td>
+                                                    <td>P</td>
+                                                    <td>1</td>
+                                                    <td>0.00</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3123</td>
+                                                    <td>SMIIEL</td>
+                                                    <td>23223</td>
+                                                    <td>P</td>
+                                                    <td>1</td>
+                                                    <td>0.00</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3123</td>
+                                                    <td>SMIIEL</td>
+                                                    <td>23223</td>
+                                                    <td>P</td>
+                                                    <td>1</td>
+                                                    <td>0.00</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3123</td>
+                                                    <td>SMIIEL</td>
+                                                    <td>23223</td>
+                                                    <td>P</td>
+                                                    <td>1</td>
+                                                    <td>0.00</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6 col-12">
+                                <div class="empfiled">
+                                    <div class="input-group mb-4">
+                                        <label for="Reasonpredefined" class="form-label">Reason predefined</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="Reasonpredefined"
+                                                placeholder="Reason predefined">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formse">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
+                                    <div class="backclass">
+                                        <button class="backpart text-decoration-none border-0 bg-white"
+                                            (click)="previousStep()" [disabled]="currentStep === 0">Back</button>
+                                    </div>
+                                    <div class="savesec d-flex align-items-center justify-content-end gap-3">
+                                        <button type="button"
+                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold">Cancle</button>
+                                        <button type="button" [routerLink]="['/employee-section/personal-details']"
+                                            class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="nextStep()" [disabled]="currentStep === steps.length - 1">Save &
+                                            Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
