@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact-address.component.scss'
 })
 export class ContactAddressComponent {
-  previewUrl: string | ArrayBuffer | null = null;
+previewUrl: string | ArrayBuffer | null = null;
 
   steps: string[] = [
     'General Details', 

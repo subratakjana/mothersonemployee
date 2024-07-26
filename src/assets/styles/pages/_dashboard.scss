@@ -56,14 +56,6 @@ $inputRounded: 8px;
       }
     }
 
-    &[placeholder] {
-      &::-ms-input-placeholder {
-        color: $inputplaceholderColor;
-        opacity: 1;
-      }
-    }
-
-
     &[disabled] {
       background-color: $inputDisbleColor;
       border-color: transparent;
@@ -115,6 +107,17 @@ $inputRounded: 8px;
   }
   .date-with-icon {
     position: relative;
+    cursor: pointer;
+    input{cursor: pointer;}
+    span{
+      position: absolute;
+      top: 50%;
+      pointer-events: none;
+      transform: translate(0%, -50%);
+      left: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
     &::after {
         content: url('../../icons/form-icon/calendar.svg'); 
         position: absolute;
@@ -124,6 +127,15 @@ $inputRounded: 8px;
         pointer-events: none;
         z-index: 99;
       }
+      input, select{
+        &[placeholder] {
+          &::-ms-input-placeholder {
+            color: $purple !important;
+            opacity: 1;
+          }
+        }
+      }
+      
   }
 }
 .formsebtn{
@@ -423,4 +435,56 @@ $inputRounded: 8px;
       border-color: #5a3b75;
     }
   }
+}
+
+/* Data Picker */
+
+ .bs-datepicker-body .bs-calendar-day {
+  background-color: #f8f9fa;
+}
+
+.bs-datepicker-body .bs-calendar-day.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+input.ng-invalid.ng-touched, 
+select.ng-invalid.ng-touched {
+  border: 1px solid #B63533;
+}
+
+ .bs-datepicker {
+  border: 1px solid $purple;
+  box-shadow: none !important;
+  border-radius: 5px !important;
+  top: 10px !important;
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid $purple;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+
+}
+.theme-green .bs-datepicker-head{
+  background-color: $purple !important;
+}
+.bs-datepicker-body{background-color: #f1e9f4;}
+.bs-datepicker-container{padding: 0 !important;}
+.theme-green .bs-datepicker-body table td.week span {
+  color: $purple !important;
+}
+.bs-datepicker-body table td, .bs-datepicker-body table th{color: #000 !important;}
+.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*=select-]:after, .theme-green .bs-datepicker-body table td[class*=select-] span:after {
+  background-color: $purple !important;
 }

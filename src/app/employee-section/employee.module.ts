@@ -22,6 +22,7 @@ import { FamilyDetailsComponent } from './family-details/family-details.componen
 import { ExperienceEducationComponent } from './experience-education/experience-education.component';
 import { AssetsDocsComponent } from './assets-docs/assets-docs.component';
 import { SalaryComponent } from './salary/salary.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 const routes: Routes = [
@@ -63,7 +64,8 @@ const routes: Routes = [
     FormsModule,
     AngularSvgIconModule,
     ReactiveFormsModule,
-    CalendarModule
+    CalendarModule,
+    BsDatepickerModule
   ],
   exports: [RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

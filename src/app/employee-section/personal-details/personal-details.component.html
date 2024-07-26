@@ -1,269 +1,348 @@
 <section class="main-content">
-    <app-sidenav></app-sidenav>
-    <app-header></app-header>
-    <div class="main-body py-5 pe-5">
-       <div class="container-fluid">
-          <div class="row">
-             <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
-                   <h4 class="fw-bold h5 m-0">Add Employee</h4>
-                </div>
-             </div>
-          </div>
-       </div>
-       <div class="container-fluid">
-          <div class="shadow rounded p-5">
-             <div class="progressBar mb-5 pb-3">
-                <ul class="progressbar">
-                   <li *ngFor="let step of steps; let i = index" [class.active]="i <= currentStep">
-                   {{ step }}
-                   </li>
-                </ul>
-             </div>
-             <form name="FormName" action="#" class="empclass" autocomplete="off">
-                <div class="formse mb-4">
-                   <div class="row">
-                      <div class="col-sm-12 col-md-12 col-12">
-                         <h3 class="mb-3 fw-bolder fs-6">Personal Detail</h3>
-                      </div>
-                   </div>
-                   <div class="row">
-                      <div class="col-lg-10 col-sm-10 col-md-10 col-12">
-                         <div class="row gap-0">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="DOB" class="form-label">DOB <span>*</span></label>
-                                     <div class="input-group date-with-icon">
-                                        <input type="text" class="form-control" id="DOB">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Birthplace" class="form-label">Birth place</label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Birthplace"
-                                           placeholder="Birth place">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Physicalstatus" class="form-label">Physical status</label>
-                                     <div class="input-group select-with-icon">
-                                        <select class="form-select" id="Physicalstatus">
-                                           <option selected>Select</option>
-                                           <option value="1">One</option>
-                                           <option value="2">Two</option>
-                                           <option value="3">Three</option>
-                                        </select>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Bloodgroup" class="form-label">Bloodgroup</label>
-                                     <div class="input-group select-with-icon">
-                                        <select class="form-select" id="Bloodgroup">
-                                           <option selected>Select</option>
-                                           <option value="1">One</option>
-                                           <option value="2">Two</option>
-                                           <option value="3">Three</option>
-                                        </select>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Nationalid*" class="form-label">National id</label>
-                                     <div class="input-group select-with-icon">
-                                        <select class="form-select" id="Nationalid">
-                                           <option selected>Select</option>
-                                           <option value="1">One</option>
-                                           <option value="2">Two</option>
-                                           <option value="3">Three</option>
-                                        </select>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Personalemail" class="form-label">Personal email id</label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Personalemail"
-                                           placeholder="Personal email id">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="formse mb-4">
-                   <div class="row">
-                      <div class="col-sm-12 col-md-12 col-12">
-                         <h3 class="mb-3 fw-bolder fs-6">Employee Identity</h3>
-                      </div>
-                   </div>
-                   <div class="row">
-                      <div class="col-lg-10 col-sm-10 col-md-10 col-12">
-                         <div class="row gap-0">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="pan_no" class="form-label">PAN no. <span>*</span></label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="pan_no"
-                                           placeholder="PAN no.">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Aadhar_no" class="form-label">Aadhar no. <span>*</span></label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Aadhar_no"
-                                           placeholder="Aadhar no.">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Company_PF_no" class="form-label">Company PF no. <span>*</span></label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Company_PF_no"
-                                           placeholder="Company PF no.">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="PRAN_number" class="form-label">PRAN number</label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="PRAN_number"
-                                           placeholder="PRAN number">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Labour_card_no" class="form-label">Labour card no.</label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Labour_card_no"
-                                           placeholder="Labour card no.">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="formse mb-0">
-                   <div class="row">
-                      <div class="col-sm-12 col-md-12 col-12">
-                         <h3 class="mb-3 fw-bolder fs-6">Passport & Visa</h3>
-                      </div>
-                   </div>
-                   <div class="row">
-                      <div class="col-lg-10 col-sm-10 col-md-10 col-12">
-                         <div class="row gap-0">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="Passport_no" class="form-label">Passport no.</label>
-                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="Passport_no"
-                                           placeholder="Passport no.">
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="row">
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                     <div class="empfiled">
-                                        <div class="input-group mb-4">
-                                           <label for="Issuedon" class="form-label">Issued on</label>
-                                           <div class="input-group date-with-icon">
-                                              <input type="text" class="form-control" id="Issuedon">
-                                           </div>
-                                        </div>
-                                     </div>
-                                  </div>
-                                  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                     <div class="empfiled">
-                                        <div class="input-group mb-4">
-                                           <label for="Validupto" class="form-label">Valid upto</label>
-                                           <div class="input-group date-with-icon">
-                                              <input type="text" class="form-control" id="Validupto">
-                                           </div>
-                                        </div>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
-                               <div class="empfiled">
-                                  <div class="input-group mb-4">
-                                     <label for="PlaceOfIssue" class="form-label">Place of issue</label>
-                                     <div class="input-group select-with-icon">
-                                        <select class="form-select" id="PlaceOfIssue">
-                                           <option selected>Select</option>
-                                           <option value="1">One</option>
-                                           <option value="2">Two</option>
-                                           <option value="3">Three</option>
-                                        </select>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-                <div class="formse">
-                   <div class="row">
-                      <div class="col-lg-10 col-sm-10 col-md-10 col-12">
-                         <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
-                            <div class="backclass">
-                               <button class="backpart text-decoration-none border-0 bg-white"
-                               (click)="previousStep()" [disabled]="currentStep === 0">Back</button>
-                            </div>
-                            <div class="savesec d-flex align-items-center justify-content-end gap-3">
-                               <button type="button"
-                                  class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold">Cancle</button>
-                               <button type="button" [routerLink]="['/employee-section/personal-details']"
-                               class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
-                               (click)="nextStep()" [disabled]="currentStep === steps.length - 1">Save &
-                               Next</button>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </form>
-          </div>
-       </div>
-    </div>
- </section>
+   <app-sidenav></app-sidenav>
+   <app-header></app-header>
+   <div class="main-body py-5 pe-5">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+               <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                  <h4 class="fw-bold h5 m-0">Add Employee</h4>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container-fluid">
+         <div class="shadow rounded p-5">
+            <div class="progressBar mb-5 pb-3">
+               <ul class="progressbar">
+                  <li [ngClass]="{'active': currentStep === 1}">General Details</li>
+                  <li [ngClass]="{'active': currentStep === 2}">Personal Details</li>
+                  <li [ngClass]="{'active': currentStep === 3}">Bank/PF/ESI</li>
+                  <li [ngClass]="{'active': currentStep === 4}">Contact & Address</li>
+                  <li [ngClass]="{'active': currentStep === 5}">Family Details</li>
+                  <li [ngClass]="{'active': currentStep === 6}">Experience & Education</li>
+                  <li [ngClass]="{'active': currentStep === 7}">Assets & Docs</li>
+                  <li [ngClass]="{'active': currentStep === 8}">Salary</li>
+                  <li [ngClass]="{'active': currentStep === 9}">Confirmation</li>
+               </ul>
+            </div>
+            <form [formGroup]="personalDetailsForm" (ngSubmit)="onSaveAndNext()" autocomplete="off">
+               <div class="formse mb-4">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12 col-12">
+                        <h3 class="mb-3 fw-bolder fs-6">Personal Detail</h3>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                        <div class="row gap-0">
+                           <!-- DOB -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="DOB" class="form-label">DOB <span>*</span></label>
+                                    <div class="input-group date-with-icon">
+                                       <input type="text" autocomplete="off" class="form-control custom-datepicker"
+                                          bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', isAnimated: true }"
+                                          placeholder="Select Date" id="DOB" formControlName="DOB">
+                                    </div>
+                                    <small
+                                       *ngIf="personalDetailsForm.get('DOB')?.invalid && personalDetailsForm.get('DOB')?.touched"
+                                       class="text-danger">
+                                       DOB is required.
+                                    </small>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Birthplace -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Birthplace" class="form-label">Birth place</label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="Birthplace"
+                                          formControlName="Birthplace" placeholder="Birth place">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Physicalstatus -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Physicalstatus" class="form-label">Physical status</label>
+                                    <div class="input-group select-with-icon">
+                                       <select class="form-select" id="Physicalstatus" formControlName="Physicalstatus">
+                                          <option value="" disabled>Select</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Bloodgroup -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Bloodgroup" class="form-label">Bloodgroup</label>
+                                    <div class="input-group select-with-icon">
+                                       <select class="form-select" id="Bloodgroup" formControlName="Bloodgroup">
+                                          <option value="" disabled>Select</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Nationalid -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Nationalid" class="form-label">National id</label>
+                                    <div class="input-group select-with-icon">
+                                       <select class="form-select" id="Nationalid" formControlName="Nationalid">
+                                          <option value="" disabled>Select</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                       </select>
+                                    </div>
+                                    <small
+                                       *ngIf="personalDetailsForm.get('Nationalid')?.invalid && personalDetailsForm.get('Nationalid')?.touched"
+                                       class="text-danger">
+                                       National id is required
+                                    </small>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Personalemail -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Personalemail" class="form-label">Personal email id
+                                       <span>*</span></label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="Personalemail"
+                                          formControlName="Personalemail" placeholder="Personal email id">
+                                    </div>
+                                    <div
+                                       *ngIf="personalDetailsForm.get('Personalemail')?.invalid && personalDetailsForm.get('Personalemail')?.touched"
+                                       class="text-danger">
+                                       <small *ngIf="personalDetailsForm.get('Personalemail')?.errors?.['required']">
+                                          Personal email is required.</small>
+                                       <small
+                                          *ngIf="personalDetailsForm.get('Personalemail')?.errors?.['email']">Invalid
+                                          email address.</small>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Employee Identity -->
+               <div class="formse mb-4">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12 col-12">
+                        <h3 class="mb-3 fw-bolder fs-6">Employee Identity</h3>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                        <div class="row gap-0">
+                           <!-- PAN no. -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="pan_no" class="form-label">PAN no. <span>*</span></label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="pan_no" formControlName="pan_no"
+                                          placeholder="PAN no.">
+                                    </div>
+                                    <small
+                                       *ngIf="personalDetailsForm.get('pan_no')?.invalid && personalDetailsForm.get('pan_no')?.touched"
+                                       class="text-danger">
+                                       PAN no. is required.
+                                    </small>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Aadhar no. -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Aadhar_no" class="form-label">Aadhar no. <span>*</span></label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="Aadhar_no"
+                                          formControlName="Aadhar_no" placeholder="Aadhar no.">
+                                    </div>
+                                    <small
+                                       *ngIf="personalDetailsForm.get('Aadhar_no')?.invalid && personalDetailsForm.get('Aadhar_no')?.touched"
+                                       class="text-danger">
+                                       Aadhar no. is required.
+                                    </small>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Company PF no. -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Company_PF_no" class="form-label">Company PF no. <span>*</span></label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="Company_PF_no"
+                                          formControlName="Company_PF_no" placeholder="Company PF no.">
+                                    </div>
+                                    <small
+                                       *ngIf="personalDetailsForm.get('Company_PF_no')?.invalid && personalDetailsForm.get('Company_PF_no')?.touched"
+                                       class="text-danger">
+                                       Company PF no. is required.
+                                    </small>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- PRAN number -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="PRAN_number" class="form-label">PRAN number</label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="PRAN_number"
+                                          formControlName="PRAN_number" placeholder="PRAN number">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Labour card no. -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Labour_card_no" class="form-label">Labour card no.</label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="Labour_card_no"
+                                          formControlName="Labour_card_no" placeholder="Labour card no.">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Passport & Visa -->
+               <div class="formse mb-0">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12 col-12">
+                        <h3 class="mb-3 fw-bolder fs-6">Passport & Visa</h3>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                        <div class="row gap-0">
+                           <!-- Passport no. -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="Passport_no" class="form-label">Passport no.</label>
+                                    <div class="input-group">
+                                       <input type="text" class="form-control" id="Passport_no"
+                                          formControlName="Passport_no" placeholder="Passport no.">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Issued on -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="row gx-3">
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="empfiled">
+                                       <div class="input-group mb-4">
+                                          <label for="Issuedon" class="form-label">Issued on</label>
+                                          <div class="input-group date-with-icon">
+                                             <input type="text" autocomplete="off"
+                                                class="form-control custom-datepicker" bsDatepicker
+                                                [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', isAnimated: true }"
+                                                placeholder="Select Date" id="Issuedon" formControlName="Issuedon">
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Valid upto -->
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="empfiled">
+                                       <div class="input-group mb-4">
+                                          <label for="Validupto" class="form-label">Valid upto</label>
+                                          <div class="input-group date-with-icon">
+                                             <input type="text" autocomplete="off"
+                                                class="form-control custom-datepicker" bsDatepicker
+                                                [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', isAnimated: true }"
+                                                placeholder="Select Date" id="Validupto" formControlName="Validupto">
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Place of issue -->
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                              <div class="empfiled">
+                                 <div class="input-group mb-4">
+                                    <label for="PlaceOfIssue" class="form-label">Place of issue</label>
+                                    <div class="input-group select-with-icon">
+                                       <select class="form-select" id="PlaceOfIssue" formControlName="PlaceOfIssue">
+                                          <option value="" disabled>Select</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="formse">
+                  <div class="row">
+                     <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                        <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
+                           <div class="backclass">
+                              <button class="backpart text-decoration-none border-0 bg-white"
+                                 [disabled]="currentStep === 1" (click)="goBack()">Back</button>
+                           </div>
+                           <div class="savesec d-flex align-items-center justify-content-end gap-3">
+                              <button type="button" class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold"
+                                 (click)="cancel()">Cancle</button>
+                              <button type="submit" class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
+                                 (click)="next()">Save & Next</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 col-sm-2 col-md-2 col-12"></div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>

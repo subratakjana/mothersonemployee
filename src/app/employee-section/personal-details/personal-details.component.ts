@@ -1,46 +1,72 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router'; // Import Router
 
 @Component({
   selector: 'app-personal-details',
   templateUrl: './personal-details.component.html',
   styleUrl: './personal-details.component.scss'
 })
-export class PersonalDetailsComponent {
-  previewUrl: string | ArrayBuffer | null = null;
+export class PersonalDetailsComponent implements OnInit{
+  personalDetailsForm: FormGroup;
+  currentStep: number = 2;
 
-  steps: string[] = [
-    'General Details', 
-    'Personal Details', 
-    'Bank/PF/ESI', 
-    'Contact & Address', 
-    'Family Details', 
-    'Experience & Education', 
-    'Assets & Docs', 
-    'Salary', 
-    'Confirmation'
-  ];
-  currentStep: number = 0;
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.personalDetailsForm = this.fb.group({
+      DOB: ['', Validators.required],
+      Birthplace: [''],
+      Physicalstatus: [''],
+      Bloodgroup: [''],
+      Nationalid: ['', Validators.required],
+      Personalemail: ['', [Validators.required, Validators.email]],
 
-  nextStep(): void {
-    if (this.currentStep < this.steps.length - 1) {
+      pan_no: ['', Validators.required],
+      Aadhar_no: ['', Validators.required],
+      Company_PF_no: ['', Validators.required],
+      PRAN_number: [''],
+      Labour_card_no: [''],
+
+      Passport_no: [''],
+      Issuedon: [''],
+      Validupto: [''],
+      PlaceOfIssue: ['']
+    });
+  }
+
+  ngOnInit(): void {
+  }
+
+  onSaveAndNext(): void {
+    if (this.personalDetailsForm.valid) {
+      console.log(this.personalDetailsForm.value);
       this.currentStep++;
+      if (this.currentStep === 3) {
+        this.router.navigate(['employee/account-details']); // Navigate to the Personal Details page
+      }
+      // Handle other steps and navigation
+    } else {
+      console.log('Form is invalid');
     }
   }
 
-  previousStep(): void {
-    if (this.currentStep > 0) {
-      this.currentStep--;
+  next(): void {
+    if (this.personalDetailsForm.valid) {
+      this.currentStep++;
+      if (this.currentStep === 3) {
+        this.router.navigate(['employee/account-details']); // Navigate to the Personal Details page
+      }
+      // Handle other steps and navigation
+    } else {
+      this.personalDetailsForm.markAllAsTouched(); // Mark all fields as touched to show validation messages
     }
   }
-  onFileSelected(event: Event): void {
-    const file = (event.target as HTMLInputElement).files?.[0];
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.previewUrl = reader.result;
-      };
-      reader.readAsDataURL(file);
-    }
+  goBack(): void {
+    this.router.navigate(['employee/general-details']); // Adjust the route according to your needs
   }
+
+  cancel(): void {
+    this.router.navigate(['/employee-list']); // Navigate to the employee list page
+  }
+
 }

@@ -6,8 +6,9 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { EmployeeModule } from './employee-section/employee.module';
 import { ReactiveFormsModule } from '@angular/forms';
-// import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     // AngularSvgIconModule.forRoot(),
     HttpClientModule,
-    EmployeeModule
+    EmployeeModule,
+    BsDatepickerModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration()

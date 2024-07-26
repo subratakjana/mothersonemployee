@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Table } from 'primeng/table';
+import { Router } from '@angular/router'; // Import Router
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -19,7 +20,7 @@ export class EmployeeListComponent implements OnInit {
   statuses!: any[];
   searchValue: any;
 
-  constructor() {
+  constructor( private router: Router) {
     
   }
 
@@ -143,6 +144,10 @@ export class EmployeeListComponent implements OnInit {
 
   onSubmit() {
    
+  }
+
+  addemployee(): void {
+    this.router.navigate(['employee/general-details']); // Navigate to the employee list page
   }
 }
 
