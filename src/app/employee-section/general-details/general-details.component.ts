@@ -22,7 +22,7 @@ export class GeneralDetailsComponent implements OnInit {
       Globalid: [{ value: '', disabled: true }, Validators.required],
       Unitid: ['', Validators.required],
       Employeetype: ['', Validators.required],
-      Employeeid: ['', Validators.required],
+      Employeeid: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       Salute: ['', Validators.required],
       Firstname: ['', Validators.required],
       Middlename: ['', Validators.required],
@@ -147,5 +147,33 @@ export class GeneralDetailsComponent implements OnInit {
   onConfirmedChange(): void {
     this.showConfirmationDate = this.employeeForm.get('confirmed')?.value;
   }
+
+  // Only Number
+  allowOnlyNumbers(event: KeyboardEvent) {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      event.preventDefault();
+    }
+  }
+
+  // Only Text
+  allowOnlyText(event: KeyboardEvent) {
+  const charCode = event.which ? event.which : event.keyCode;
+  // Allow backspace, tab, delete, arrow keys, etc.
+  if (
+    charCode === 8 || // backspace
+    charCode === 9 || // tab
+    charCode === 46 || // delete
+    (charCode >= 37 && charCode <= 40) // arrow keys
+  ) {
+    return; 
+  }
+
+  // Allow only letters (a-z, A-Z)
+  if (charCode < 65 || charCode > 90 && charCode < 97 || charCode > 122) {
+    event.preventDefault();
+  }
+}
+
   
 }

@@ -40,7 +40,7 @@ export class BankPfEsiComponent {
     if (this.accountDetailsForm.valid) {
       console.log(this.accountDetailsForm.value);
       this.currentStep++;
-      if (this.currentStep === 3) {
+      if (this.currentStep === 4) {
         this.router.navigate(['employee/contact-details']); // Navigate to the Personal Details page
       }
       // Handle other steps and navigation
@@ -52,7 +52,7 @@ export class BankPfEsiComponent {
   next(): void {
     if (this.accountDetailsForm.valid) {
       this.currentStep++;
-      if (this.currentStep === 3) {
+      if (this.currentStep === 4) {
         this.router.navigate(['employee/contact-details']); // Navigate to the Personal Details page
       }
       // Handle other steps and navigation

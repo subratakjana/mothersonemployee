@@ -15,9 +15,15 @@
             <div class="shadow rounded p-5">
                 <div class="progressBar mb-5 pb-3">
                     <ul class="progressbar">
-                        <li *ngFor="let step of steps; let i = index" [class.active]="i <= currentStep">
-                            {{ step }}
-                        </li>
+                        <li [ngClass]="{'active': currentStep === 1}">General Details</li>
+                        <li [ngClass]="{'active': currentStep === 2}">Personal Details</li>
+                        <li [ngClass]="{'active': currentStep === 3}">Bank/PF/ESI</li>
+                        <li [ngClass]="{'active': currentStep === 4}">Contact & Address</li>
+                        <li [ngClass]="{'active': currentStep === 5}">Family Details</li>
+                        <li [ngClass]="{'active': currentStep === 6}">Experience & Education</li>
+                        <li [ngClass]="{'active': currentStep === 7}">Assets & Docs</li>
+                        <li [ngClass]="{'active': currentStep === 8}">Salary</li>
+                        <li [ngClass]="{'active': currentStep === 9}">Confirmation</li>
                     </ul>
                 </div>
                 <form name="FormName" action="#" class="empclass" autocomplete="off">
@@ -231,18 +237,19 @@
                                 <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
                                     <div class="backclass">
                                         <button class="backpart text-decoration-none border-0 bg-white"
-                                            (click)="previousStep()" [disabled]="currentStep === 0">Back</button>
+                                            [disabled]="currentStep === 5" (click)="goBack()">Back</button>
                                     </div>
                                     <div class="savesec d-flex align-items-center justify-content-end gap-3">
                                         <button type="button"
-                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold">Cancle</button>
-                                        <button type="button" [routerLink]="['/employee-section/personal-details']"
+                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="cancel()">Cancle</button>
+                                        <button type="submit"
                                             class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
-                                            (click)="nextStep()" [disabled]="currentStep === steps.length - 1">Save &
-                                            Next</button>
+                                            (click)="next()">Save & Next</button>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-2 col-sm-2 col-md-2 col-12"></div>
                         </div>
                     </div>
                 </form>

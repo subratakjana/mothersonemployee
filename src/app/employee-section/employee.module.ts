@@ -23,6 +23,7 @@ import { ExperienceEducationComponent } from './experience-education/experience-
 import { AssetsDocsComponent } from './assets-docs/assets-docs.component';
 import { SalaryComponent } from './salary/salary.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ConfirmationDetailsComponent } from './confirmation-details/confirmation-details.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'employee/experience-education-details', component: ExperienceEducationComponent },
   { path: 'employee/assets-docs-details', component: AssetsDocsComponent },
   { path: 'employee/salary-details', component: SalaryComponent },
+  { path: 'employee/confirmation-details', component: ConfirmationDetailsComponent },
 ];
 
 @NgModule({
@@ -47,7 +49,8 @@ const routes: Routes = [
     FamilyDetailsComponent,
     ExperienceEducationComponent,
     AssetsDocsComponent,
-    SalaryComponent
+    SalaryComponent,
+    ConfirmationDetailsComponent
   ],
   imports: [
     CommonModule,

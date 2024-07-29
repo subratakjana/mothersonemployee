@@ -1,0 +1,59 @@
+<section class="main-content">
+    <app-sidenav></app-sidenav>
+    <app-header></app-header>
+    <div class="main-body py-5 pe-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between pb-4">
+                        <h4 class="fw-bold h5 m-0">Add Employee</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="shadow rounded p-5">
+                <div class="progressBar mb-5 pb-3">
+                    <ul class="progressbar">
+                        <li [ngClass]="{'active': currentStep === 1}">General Details</li>
+                        <li [ngClass]="{'active': currentStep === 2}">Personal Details</li>
+                        <li [ngClass]="{'active': currentStep === 3}">Bank/PF/ESI</li>
+                        <li [ngClass]="{'active': currentStep === 4}">Contact & Address</li>
+                        <li [ngClass]="{'active': currentStep === 5}">Family Details</li>
+                        <li [ngClass]="{'active': currentStep === 6}">Experience & Education</li>
+                        <li [ngClass]="{'active': currentStep === 7}">Assets & Docs</li>
+                        <li [ngClass]="{'active': currentStep === 8}">Salary</li>
+                        <li [ngClass]="{'active': currentStep === 9}">Confirmation</li>
+                    </ul>
+                </div>
+                <form name="FormName" action="#" class="empclass" autocomplete="off">
+
+                    This is the confirmation page 
+
+
+                    <div class="formse">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                <div class="formsebtn d-flex align-items-center justify-content-between mb-2 mt-3">
+                                    <div class="backclass">
+                                        <button class="backpart text-decoration-none border-0 bg-white"
+                                            [disabled]="currentStep === 8" (click)="goBack()">Back</button>
+                                    </div>
+                                    <div class="savesec d-flex align-items-center justify-content-end gap-3">
+                                        <button type="button"
+                                            class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="cancel()">Cancle</button>
+                                        <button type="submit"
+                                            class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
+                                            (click)="next()">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-2 col-md-2 col-12"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
