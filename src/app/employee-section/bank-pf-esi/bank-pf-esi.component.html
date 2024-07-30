@@ -54,7 +54,7 @@
                                     <label for="PFno" class="form-label">PF no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="PFno" formControlName="PFno"
-                                          placeholder="PF no.">
+                                          placeholder="PF no." appAllowTextAndNumbers appTransformToUpper>
                                     </div>
                                  </div>
                               </div>
@@ -65,7 +65,7 @@
                                     <label for="UAN-no" class="form-label">UAN no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="UAN-no" formControlName="UAN_no"
-                                          placeholder="UAN no.">
+                                          placeholder="UAN no." appAllowOnlyNumbers>
                                     </div>
                                  </div>
                               </div>
@@ -76,7 +76,7 @@
                                     <label for="ESI-no" class="form-label">ESI no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="ESI-no" formControlName="ESI_no"
-                                          placeholder="ESI no.">
+                                          placeholder="ESI no." appAllowTextAndNumbers>
                                     </div>
                                  </div>
                               </div>
@@ -88,8 +88,8 @@
                                     <div class="input-group date-with-icon">
                                        <input type="text" autocomplete="off" class="form-control custom-datepicker"
                                           bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', isAnimated: true }"
-                                          placeholder="Select Date" id="ESI-registered"
-                                          formControlName="ESI_registered">
+                                          placeholder="Select Date" id="ESI-registered" formControlName="ESI_registered"
+                                          appAllowTextAndNumbers appPreventTextInput>
                                     </div>
                                  </div>
                               </div>
@@ -111,7 +111,7 @@
                                     <label for="EDLIno" class="form-label">EDLI no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="EDLIno" formControlName="EDLIno"
-                                          placeholder="EDLI no.">
+                                          placeholder="EDLI no." appAllowTextAndNumbers>
                                     </div>
                                  </div>
                               </div>
@@ -122,7 +122,8 @@
                                     <label for="Gratuityno" class="form-label">Gratuity no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="Gratuityno"
-                                          formControlName="Gratuityno" placeholder="Gratuity no.">
+                                          formControlName="Gratuityno" placeholder="Gratuity no."
+                                          appAllowTextAndNumbers>
                                     </div>
                                  </div>
                               </div>
@@ -133,7 +134,7 @@
                                     <label for="Super" class="form-label">Super annuation no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="Super" formControlName="Super"
-                                          placeholder="Super annuation no.">
+                                          placeholder="Super annuation no." appAllowTextAndNumbers>
                                     </div>
                                  </div>
                               </div>
@@ -197,7 +198,8 @@
                                     <label for="Saving_Accountno" class="form-label">Account no. <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="Saving_Accountno"
-                                          formControlName="Saving_Accountno" placeholder="Account no.">
+                                          formControlName="Saving_Accountno" placeholder="Account no."
+                                          appAllowOnlyNumbers>
                                     </div>
                                     <div
                                        *ngIf="accountDetailsForm.get('Saving_Accountno')?.invalid && accountDetailsForm.get('Saving_Accountno')?.touched">
@@ -212,7 +214,8 @@
                                     <label for="Saving_IFSCcode" class="form-label">IFSC code <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="Saving_IFSCcode"
-                                          formControlName="Saving_IFSCcode" placeholder="IFSC code">
+                                          formControlName="Saving_IFSCcode" placeholder="IFSC code"
+                                          appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="accountDetailsForm.get('Saving_IFSCcode')?.invalid && accountDetailsForm.get('Saving_IFSCcode')?.touched">
@@ -271,7 +274,8 @@
                                     <label for="Current_Accountno" class="form-label">Account no.</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="Current_Accountno"
-                                          formControlName="Current_Accountno" placeholder="Account no.">
+                                          formControlName="Current_Accountno" placeholder="Account no."
+                                          appAllowTextAndNumbers>
                                     </div>
                                  </div>
                               </div>
@@ -282,7 +286,8 @@
                                     <label for="Current_IFSCcode" class="form-label">IFSC code</label>
                                     <div class="input-group">
                                        <input type="text" class="form-control" id="Current_IFSCcode"
-                                          formControlName="Current_IFSCcode" placeholder="IFSC code">
+                                          formControlName="Current_IFSCcode" placeholder="IFSC code"
+                                          appAllowTextAndNumbers>
                                     </div>
                                  </div>
                               </div>

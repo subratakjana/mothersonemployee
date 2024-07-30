@@ -68,5 +68,5 @@ export class PersonalDetailsComponent implements OnInit{
   cancel(): void {
     this.router.navigate(['/employee-list']); // Navigate to the employee list page
   }
-
+  
 }

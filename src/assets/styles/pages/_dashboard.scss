@@ -34,6 +34,7 @@ $inputRounded: 8px;
       color: $inputSpanColor;
     }
   }
+  .custom-datepicker{caret-color: transparent;}
   input,
   select {
     height: $inputBoxHight;
@@ -118,6 +119,7 @@ $inputRounded: 8px;
       font-size: 14px;
       cursor: pointer;
     }
+    input, .custom-datepicker{caret-color: transparent;}
     &::after {
         content: url('../../icons/form-icon/calendar.svg'); 
         position: absolute;
@@ -438,7 +440,6 @@ $inputRounded: 8px;
 }
 
 /* Data Picker */
-
  .bs-datepicker-body .bs-calendar-day {
   background-color: #f8f9fa;
 }

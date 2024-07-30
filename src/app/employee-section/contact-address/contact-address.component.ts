@@ -16,20 +16,28 @@ export class ContactAddressComponent {
       Mobileno: [
         '',
         [Validators.required,
-          Validators.pattern('^[0-9]*$'), 
-          Validators.minLength(10), 
-          Validators.maxLength(10)
+        Validators.pattern('^[0-9]*$'),
+        Validators.minLength(10),
+        Validators.maxLength(10)
         ]
       ],
-      Emergency1: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      Emergency2: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Emergency1: ['', [Validators.required,
+      Validators.pattern('^[0-9]*$'),
+      Validators.minLength(10),
+      Validators.maxLength(10)
+      ]],
+      Emergency2: ['', [Validators.required,
+      Validators.pattern('^[0-9]*$'),
+      Validators.minLength(10),
+      Validators.maxLength(10)
+      ]],
       Address1: ['', Validators.required],
       Address2: ['', Validators.required],
       Address3: ['', Validators.required],
       Country: ['', Validators.required],
       State: ['', Validators.required],
       City: ['', Validators.required],
-      Pincode: ['', [Validators.required,   Validators.pattern('^[0-9]{6}$')]],
+      Pincode: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
       pAddress1: ['', Validators.required],
       pAddress2: ['', Validators.required],
       pAddress3: ['', Validators.required],
@@ -39,11 +47,6 @@ export class ContactAddressComponent {
       pPincode: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
       sameAsPresent: [false]
     });
-  }
-
-  validateNumericInput(event: Event): void {
-    const inputElement = event.target as HTMLInputElement;
-    inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
   }
 
   onSaveAndNext(): void {

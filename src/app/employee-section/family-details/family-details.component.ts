@@ -57,6 +57,8 @@ export class FamilyDetailsComponent {
       twospouseDOB: [''],
       twosmedicalFrom: [''],
       twosmedicalTo: [''],
+
+      
     });
 
     this.referenceForm = this.fb.group({

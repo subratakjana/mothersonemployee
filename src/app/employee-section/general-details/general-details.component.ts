@@ -25,7 +25,7 @@ export class GeneralDetailsComponent implements OnInit {
       Employeeid: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       Salute: ['', Validators.required],
       Firstname: ['', Validators.required],
-      Middlename: ['', Validators.required],
+      Middlename: [''],
       Lastname: ['', Validators.required],
       Gender: ['', Validators.required],
       emailid: ['', [Validators.required, Validators.email]],
@@ -97,6 +97,30 @@ export class GeneralDetailsComponent implements OnInit {
     inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
   }
 
+  
+  next(): void {
+    if (this.employeeForm.valid) {
+      this.currentStep++;
+      if (this.currentStep === 2) {
+        this.router.navigate(['employee/personal-details']); // Navigate to the Personal Details page
+      }
+      // Handle other steps and navigation
+    } else {
+      this.employeeForm.markAllAsTouched(); // Mark all fields as touched to show validation messages
+    }
+  }
+
+  goBack(): void {
+    if (this.currentStep > 1) {
+      this.currentStep--;
+    }
+  }
+  
+  cancel(): void {
+    this.router.navigate(['/employee-list']); // Navigate to the employee list page
+  }
+
+  // File Upload check the image
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
@@ -122,58 +146,9 @@ export class GeneralDetailsComponent implements OnInit {
     }
   }
 
-  next(): void {
-    if (this.employeeForm.valid) {
-      this.currentStep++;
-      if (this.currentStep === 2) {
-        this.router.navigate(['employee/personal-details']); // Navigate to the Personal Details page
-      }
-      // Handle other steps and navigation
-    } else {
-      this.employeeForm.markAllAsTouched(); // Mark all fields as touched to show validation messages
-    }
-  }
-
-  goBack(): void {
-    if (this.currentStep > 1) {
-      this.currentStep--;
-    }
-  }
-
-  cancel(): void {
-    this.router.navigate(['/employee-list']); // Navigate to the employee list page
-  }
-
+  //Confirm Check
   onConfirmedChange(): void {
     this.showConfirmationDate = this.employeeForm.get('confirmed')?.value;
   }
 
-  // Only Number
-  allowOnlyNumbers(event: KeyboardEvent) {
-    const charCode = event.which ? event.which : event.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-      event.preventDefault();
-    }
-  }
-
-  // Only Text
-  allowOnlyText(event: KeyboardEvent) {
-  const charCode = event.which ? event.which : event.keyCode;
-  // Allow backspace, tab, delete, arrow keys, etc.
-  if (
-    charCode === 8 || // backspace
-    charCode === 9 || // tab
-    charCode === 46 || // delete
-    (charCode >= 37 && charCode <= 40) // arrow keys
-  ) {
-    return; 
-  }
-
-  // Allow only letters (a-z, A-Z)
-  if (charCode < 65 || charCode > 90 && charCode < 97 || charCode > 122) {
-    event.preventDefault();
-  }
-}
-
-  
 }

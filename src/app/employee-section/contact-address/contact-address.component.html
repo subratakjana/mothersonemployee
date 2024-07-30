@@ -54,8 +54,7 @@
                                     <label for="Mobileno" class="form-label">Mobile no. <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Mobileno" formControlName="Mobileno" class="form-control"
-                                          placeholder="Mobile no." (input)="validateNumericInput($event)"
-                                          maxlength="10">
+                                          placeholder="Mobile no." appAllowOnlyNumbers appMaxlength="10">
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Mobileno')?.invalid && contactDetailsForm.get('Mobileno')?.touched"
@@ -77,14 +76,16 @@
                                        <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Emergency1" formControlName="Emergency1"
-                                          class="form-control" placeholder="Emergency mobile no. 1"
-                                          (input)="validateNumericInput($event)" maxlength="10">
+                                          class="form-control" placeholder="Emergency mobile no. 1" appAllowOnlyNumbers
+                                          appMaxlength="10">
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Emergency1')?.invalid && contactDetailsForm.get('Emergency1')?.touched"
                                        class="text-danger">
                                        <small *ngIf="contactDetailsForm.get('Emergency1')?.errors?.['required']">Mobile
                                           number is required</small>
+                                       <small *ngIf="contactDetailsForm.get('Emergency1')?.errors?.['minlength']">Mobile
+                                          number must be 10 digits</small>
                                        <small *ngIf="contactDetailsForm.get('Emergency1')?.errors?.['pattern']">Invalid
                                           mobile number</small>
                                     </div>
@@ -98,14 +99,16 @@
                                        <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Emergency2" formControlName="Emergency2"
-                                          class="form-control" placeholder="Emergency mobile no. 2"
-                                          (input)="validateNumericInput($event)" maxlength="10">
+                                          class="form-control" placeholder="Emergency mobile no. 2" appAllowOnlyNumbers
+                                          appMaxlength="10">
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Emergency2')?.invalid && contactDetailsForm.get('Emergency2')?.touched"
                                        class="text-danger">
                                        <small *ngIf="contactDetailsForm.get('Emergency2')?.errors?.['required']">Mobile
                                           number is required</small>
+                                       <small *ngIf="contactDetailsForm.get('Emergency2')?.errors?.['minlength']">Mobile
+                                          number must be 10 digits</small>
                                        <small *ngIf="contactDetailsForm.get('Emergency2')?.errors?.['pattern']">Invalid
                                           mobile number</small>
                                     </div>
@@ -131,7 +134,7 @@
                                     <label for="Address1" class="form-label">Address (Line 1) <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Address1" formControlName="Address1" class="form-control"
-                                          placeholder="Address (Line 1)">
+                                          placeholder="Address (Line 1)" appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Address1')?.invalid && contactDetailsForm.get('Address1')?.touched"
@@ -148,7 +151,7 @@
                                     <label for="Address2" class="form-label">Address (Line 2) <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Address2" formControlName="Address2" class="form-control"
-                                          placeholder="Address (Line 2)">
+                                          placeholder="Address (Line 2)" appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Address2')?.invalid && contactDetailsForm.get('Address2')?.touched"
@@ -165,7 +168,7 @@
                                     <label for="Address3" class="form-label">Address (Line 3) <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Address3" formControlName="Address3" class="form-control"
-                                          placeholder="Address (Line 3)">
+                                          placeholder="Address (Line 3)" appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Address3')?.invalid && contactDetailsForm.get('Address3')?.touched"
@@ -248,7 +251,7 @@
                                     <label for="Pincode" class="form-label">Pin code <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="Pincode" formControlName="Pincode" class="form-control"
-                                          placeholder="Pin code" (input)="validateNumericInput($event)" maxlength="6">
+                                          placeholder="Pin code" appAllowOnlyNumbers appMaxlength="6">
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('Pincode')?.invalid && contactDetailsForm.get('Pincode')?.touched"
@@ -289,7 +292,7 @@
                                     <label for="pAddress1" class="form-label">Address (Line 1) <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="pAddress1" formControlName="pAddress1"
-                                          class="form-control" placeholder="Address (Line 1)">
+                                          class="form-control" placeholder="Address (Line 1)" appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('pAddress1')?.invalid && contactDetailsForm.get('pAddress1')?.touched"
@@ -306,7 +309,7 @@
                                     <label for="pAddress2" class="form-label">Address (Line 2) <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="pAddress2" formControlName="pAddress2"
-                                          class="form-control" placeholder="Address (Line 2)">
+                                          class="form-control" placeholder="Address (Line 2)" appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('pAddress2')?.invalid && contactDetailsForm.get('pAddress2')?.touched"
@@ -323,7 +326,7 @@
                                     <label for="pAddress3" class="form-label">Address (Line 3) <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="pAddress3" formControlName="pAddress3"
-                                          class="form-control" placeholder="Address (Line 2)">
+                                          class="form-control" placeholder="Address (Line 2)" appAllowTextAndNumbers>
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('pAddress3')?.invalid && contactDetailsForm.get('pAddress3')?.touched"
@@ -406,7 +409,7 @@
                                     <label for="pPincode" class="form-label">Pin code <span>*</span></label>
                                     <div class="input-group">
                                        <input type="text" id="pPincode" formControlName="pPincode" class="form-control"
-                                          placeholder="Pin code" (input)="validateNumericInput($event)" maxlength="6">
+                                          placeholder="Pin code" appAllowOnlyNumbers appMaxlength="6">
                                     </div>
                                     <div
                                        *ngIf="contactDetailsForm.get('pPincode')?.invalid && contactDetailsForm.get('pPincode')?.touched"
