@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
+  private expandedMenus: { [key: string]: boolean } = {};
 
+  toggleMenu(menu: string) {
+    this.expandedMenus[menu] = !this.expandedMenus[menu];
+  }
+
+  isExpanded(menu: string): boolean {
+    return !!this.expandedMenus[menu];
+  }
 }

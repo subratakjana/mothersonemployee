@@ -1,10 +1,10 @@
 @import "../../../assets/styles/themes/variables";
-@import "../../../assets/styles/pages/dashboard";
+//@import "../../../assets/styles/pages/dashboard";
 
 .sidebar {
     height: auto;
     left: 0;
-    box-shadow: 0 12px 30px rgba(80, 143, 244, .1);
+    box-shadow: 2px 0px 21px rgb(0 0 0 / 15%);
     transition: .3s;
     top: 24px;
     border-radius: 0px 24px 24px 0px;
@@ -20,14 +20,17 @@
     background: #fff;
     overflow: hidden;
 
-    ul, li{
+    ul,
+    li {
         padding: 0;
         margin: 0;
     }
+
     li {
         margin-left: 0;
         margin-right: 0;
     }
+
     li a {
         color: #594170;
         background: #fff;
@@ -43,19 +46,52 @@
         border-left: 8px solid transparent;
         width: 100%;
 
-        &:hover{
+        &:hover {
             border-left: 8px solid #8D7597;
             background-color: #594170;
+
             svg {
-                path{
+                path {
                     stroke: #fff;
                 }
             }
         }
     }
-    li a img{
+
+    li a img {
         width: 24px;
         height: auto;
+    }
+
+    ng-deep .popover {
+        background-color: $purple;
+        color: #fff;
+    }
+    
+    ::ng-deep .popover-body {
+        padding: 6px 10px;
+        color: #fff;
+    }
+    
+    .popover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent #333 transparent transparent;
+        transform: translateY(-50%);
+    }
+    
+    .popover::after {
+        content: 'Custom Content';
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        background-color: #444;
+        color: #fff;
+        padding: 5px;
     }
 }
 
@@ -78,9 +114,7 @@
     bottom: 24px;
     padding: 44px 0px 44px 0px;
 
-    
+
 
 }
-// .sidebar.dark_sidebar {
-//     background: #fff;
-// }
+

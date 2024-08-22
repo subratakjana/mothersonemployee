@@ -28,7 +28,7 @@ export class SalaryComponent {
       console.log(this.salaryDetails.value);
       this.currentStep++;
       if (this.currentStep === 9) {
-        this.router.navigate(['employee/salary-details']); // Navigate to the salary Details page
+        this.router.navigate(['employee/confirmation-details']); // Navigate to the salary Details page
       }
       // Handle other steps and navigation
     } else {
@@ -40,7 +40,7 @@ export class SalaryComponent {
     if (this.salaryDetails.valid) {
       this.currentStep++;
       if (this.currentStep === 9) {
-        this.router.navigate(['employee/salary-details']); // Navigate to the salary Details page
+        this.router.navigate(['employee/confirmation-details']); // Navigate to the salary Details page
       }
       // Handle other steps and navigation
     } else {

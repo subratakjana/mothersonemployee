@@ -7,6 +7,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputTextModule } from 'primeng/inputtext';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InputTextModule } from 'primeng/inputtext';
     AngularSvgIconModule.forRoot(),
     HttpClientModule,
     TooltipModule,
-    InputTextModule 
+    InputTextModule ,
+    PopoverModule
   ],
   exports: [
     HeaderComponent,

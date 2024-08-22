@@ -164,9 +164,6 @@
         }
 
     input{
-        height: 45px !important;
-        color: #777776;
-        border: 1px solid #CBBFCF4D;
         &:focus{
             box-shadow: none;
             border: 1px solid $purple;
@@ -190,4 +187,17 @@
 
 .page-title-box{
     i{color: $purple;}
+}
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight{
+    background: $purple;
+    border-color: $purple;
+    color: $white;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.p-paginator .p-paginator-pages .p-paginator-page{
+    color: $purple;
+}
+.p-datatable .p-datatable-header{
+    padding: 1.5rem 1rem;
 }

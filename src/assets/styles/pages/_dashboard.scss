@@ -10,7 +10,7 @@ $inputBorderColor: #CBCCCB;
 $inputSpanColor: #B63533;
 $inputDisbleColor: #F1E9F4;
 $inputplaceholderColor: #CBCCCB;
-$taginfo:#9F9F9E;
+$taginfo: #9F9F9E;
 
 $inputLabelWeight: 400;
 
@@ -19,8 +19,10 @@ $inputLabelLheight: 20px;
 $inputBoxHight: 40px;
 $inputRounded: 8px;
 
-.main-content{
-  .main-body{padding-left: $mainbody-left;}
+.main-content {
+  .main-body {
+    padding-left: $mainbody-left;
+  }
 }
 
 .empfiled {
@@ -34,7 +36,11 @@ $inputRounded: 8px;
       color: $inputSpanColor;
     }
   }
-  .custom-datepicker{caret-color: transparent;}
+
+  .custom-datepicker {
+    caret-color: transparent;
+  }
+
   input,
   select {
     height: $inputBoxHight;
@@ -69,6 +75,7 @@ $inputRounded: 8px;
       }
     }
   }
+
   .input-with-icon {
     position: relative;
 
@@ -83,6 +90,7 @@ $inputRounded: 8px;
       z-index: 99;
     }
   }
+
   .select-with-icon {
     position: relative;
 
@@ -90,27 +98,61 @@ $inputRounded: 8px;
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-        cursor: pointer;
-        background-image: none;
+      cursor: pointer;
+      background-image: none;
+
       &::-ms-expand {
         display: none;
       }
     }
+
     &::after {
-        content: url('../../icons/form-icon/chevron-right.svg'); 
-        position: absolute;
-        top: 60%;
-        right: 10px;
-        transform: translateY(-50%) scale(1.1);
-        pointer-events: none;
-        z-index: 99;
-      }
+      content: url('../../icons/form-icon/chevron-right.svg');
+      position: absolute;
+      top: 60%;
+      right: 10px;
+      transform: translateY(-50%) scale(1.1);
+      pointer-events: none;
+      z-index: 99;
+    }
   }
+
+  .select-icon {
+    position: relative;
+    
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      background-image: none;
+      font-weight: 500;
+
+      &::-ms-expand {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: url('../../icons/form-icon/creat.svg');
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-60%) scale(1.2);
+      pointer-events: none;
+      z-index: 99;
+    }
+  }
+
   .date-with-icon {
     position: relative;
     cursor: pointer;
-    input{cursor: pointer;}
-    span{
+
+    input {
+      cursor: pointer;
+    }
+
+    span {
       position: absolute;
       top: 50%;
       pointer-events: none;
@@ -119,32 +161,41 @@ $inputRounded: 8px;
       font-size: 14px;
       cursor: pointer;
     }
-    input, .custom-datepicker{caret-color: transparent;}
+
+    input,
+    .custom-datepicker {
+      caret-color: transparent;
+    }
+
     &::after {
-        content: url('../../icons/form-icon/calendar.svg'); 
-        position: absolute;
-        top: 55%;
-        right: 10px;
-        transform: translateY(-50%) scale(1.1);
-        pointer-events: none;
-        z-index: 99;
-      }
-      input, select{
-        &[placeholder] {
-          &::-ms-input-placeholder {
-            color: $purple !important;
-            opacity: 1;
-          }
+      content: url('../../icons/form-icon/calendar.svg');
+      position: absolute;
+      top: 55%;
+      right: 10px;
+      transform: translateY(-50%) scale(1.1);
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    input,
+    select {
+      &[placeholder] {
+        &::-ms-input-placeholder {
+          color: $purple !important;
+          opacity: 1;
         }
       }
-      
+    }
+
   }
 }
-.formsebtn{
-  .backpart{
+
+.formsebtn {
+  .backpart {
     font-size: $inputLabelSize;
     font-weight: $font-weight-semibold;
     color: $purple;
+
     &[disabled] {
       background-color: $inputDisbleColor;
       border-color: transparent;
@@ -153,32 +204,36 @@ $inputRounded: 8px;
       opacity: 30%;
       cursor: not-allowed;
     }
-  } 
+  }
 }
-.formse{
-  .empfiled{
+
+.formse {
+  .empfiled {
     input[type="checkbox"] {
-    width: 45px;
-    height: 22px;
-    border-radius: 50px !important;
-    background-color: $purple;
-    margin-right: 10px;
+      width: 45px;
+      height: 22px;
+      border-radius: 50px !important;
+      background-color: $purple;
+      margin-right: 10px;
     }
   }
-  .form-check-input{
+
+  .form-check-input {
     border-radius: 0 !important;
     font-size: $inputLabelSize;
-    &:checked{
-    background-color: $purple;
-    border-color:  $purple;
+
+    &:checked {
+      background-color: $purple;
+      border-color: $purple;
     }
-    &:focus{
+
+    &:focus {
       box-shadow: none;
       outline: 0;
       border-color: $purple;
     }
   }
-  
+
 }
 
 .progressbar {
@@ -188,7 +243,7 @@ $inputRounded: 8px;
   list-style: none;
   padding: 0;
   margin: 0;
-  
+
   li {
     position: relative;
     flex: 1;
@@ -196,7 +251,7 @@ $inputRounded: 8px;
     font-size: 14px;
     font-weight: 500;
     color: #646464;
-    
+
     &:before {
       counter-increment: step;
       content: counter(step);
@@ -222,7 +277,7 @@ $inputRounded: 8px;
       left: 50%;
       z-index: -1;
     }
-    
+
     &:last-child:after {
       content: none;
     }
@@ -231,11 +286,11 @@ $inputRounded: 8px;
       color: #563d7c;
       font-size: 16px;
       font-weight: 600;
-      
+
       &:before {
         border-color: #594170;
-      background-color: #fff;
-      border-width: 5px;
+        background-color: #fff;
+        border-width: 5px;
       }
 
       &:after {
@@ -246,176 +301,208 @@ $inputRounded: 8px;
 }
 
 .profile-image-upload {
-    .form-group {
-      .form-label {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      .image-preview {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px dashed #6c757d;
-        border-radius: 0.25rem;
-        height: 250px;
-        width: 250px;
-        margin: auto;
-        overflow: hidden;
-        position: relative;
-
-        img {
-          max-height: 100%;
-          max-width: 100%;
-        }
-
-        .placeholder {
-          text-align: center;
-
-          i {
-            font-size: 3rem;
-            color: #6c757d;
-          }
-
-          p {
-            margin: 0;
-            color: #6c757d;
-            font-weight: bold;
-          }
-        }
-      }
-
-      .form-control-file {
-        display: block;
-        width: 100%;
-        margin-top: 1rem;
-      }
+  .form-group {
+    .form-label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
-    .profile-image-box{
-      border: 1px solid $inputBorderColor;
-      border-radius: $inputRounded;
-      padding: 15px;
-      .profile-inside{
-        border: 2px dashed #AC9CBB;
-        padding: 30px 10px;
+
+    .image-preview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px dashed #6c757d;
+      border-radius: 0.25rem;
+      height: 250px;
+      width: 250px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
       }
-      .profileimg{
-        height: 80px;
-        width: 80px;
-        border-radius: 100px;
-        object-fit: cover;
-      }
-      .uploadimg  input{display: none;}
-      .upload-button{
-        position: relative;
-        width: 40px;
-        height: 40px;
-        border: none;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: ease-in-out .3s;
-        background-color: #F3F3F3;
-        cursor: pointer;
-        &:hover{
-          background-color: $purple;
-           svg {
-            path{stroke: $white;}
-           }
+
+      .placeholder {
+        text-align: center;
+
+        i {
+          font-size: 3rem;
+          color: #6c757d;
+        }
+
+        p {
+          margin: 0;
+          color: #6c757d;
+          font-weight: bold;
         }
       }
     }
+
+    .form-control-file {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+
+  .profile-image-box {
+    border: 1px solid $inputBorderColor;
+    border-radius: $inputRounded;
+    padding: 15px;
+
+    .profile-inside {
+      border: 2px dashed #AC9CBB;
+      padding: 30px 10px;
+    }
+
+    .profileimg {
+      height: 80px;
+      width: 80px;
+      border-radius: 100px;
+      object-fit: cover;
+    }
+
+    .uploadimg input {
+      display: none;
+    }
+
+    .upload-button {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out .3s;
+      background-color: #F3F3F3;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $purple;
+
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
 }
 
-.taginfo{
-   .breadcrumb{
-    .breadcrumb-item{
+.taginfo {
+  .breadcrumb {
+    .breadcrumb-item {
       color: $taginfo;
       font-size: $inputLabelSize;
       text-transform: uppercase;
-      &::before{
+
+      &::before {
         content: '|';
         color: $taginfo;
       }
-      &:first-child{
-        &::before{content: none; }
+
+      &:first-child {
+        &::before {
+          content: none;
+        }
       }
     }
-   }
+  }
 }
 
-.tableview{
+.tableview {
 
-.table-responsive::-webkit-scrollbar {
-  height: 6px; 
-}
-.table-responsive::-webkit-scrollbar-thumb {
-  background-color: $purple;
-  border-radius: 10px;
-}
-.table-responsive::-webkit-scrollbar-thumb:hover {
-  background-color: $purple;
-}
+  .table-responsive::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    background-color: $purple;
+    border-radius: 10px;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb:hover {
+    background-color: $purple;
+  }
+
   border: 1px solid $inputBorderColor !important;
-  input{
-    &:focus, &:active{
+
+  input {
+
+    &:focus,
+    &:active {
       box-shadow: none;
       border: none;
     }
   }
-  table{
-   border: none;
+
+  table {
+    border: none;
   }
-  thead{
-    th{
+
+  thead {
+    th {
       background-color: #1A1919;
       color: #fff;
       font-size: 13px;
       font-weight: 400;
       padding: 10px 15px;
       white-space: nowrap;
-      &:last-child{
+
+      &:last-child {
         text-align: center;
       }
-    }    
+    }
   }
-  tbody{
-    tr{
-      &:nth-of-type(odd) *{
+
+  tbody {
+    tr {
+      &:nth-of-type(odd) * {
         background-color: #F4EFF4;
       }
     }
-    td{
-    border: none;
-    font-size: 13px;
-    font-weight: 400;
-    padding: 10px 15px;
-    white-space: nowrap;
-    &:last-child{
-      text-align: center;
-    }    
+
+    td {
+      border: none;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 10px 15px;
+      white-space: nowrap;
+
+      &:last-child {
+        text-align: center;
+      }
     }
   }
-  tfoot{
-    tr{
-    box-shadow: 0px -8px 20px rgb(65 65 65 / 20%);
-    td{
-      background-color: #fff;
-      border-top: 1px solid #CBCCCB;      
-      padding: 10px 20px;
-      border-bottom: none;
-    }
+
+  tfoot {
+    tr {
+      box-shadow: 0px -8px 20px rgb(65 65 65 / 20%);
+
+      td {
+        background-color: #fff;
+        border-top: 1px solid #CBCCCB;
+        padding: 10px 20px;
+        border-bottom: none;
+      }
     }
   }
 }
-.offcanvas.offcanvas-end{
+
+.offcanvas.offcanvas-end {
   width: 800px !important;
 }
-.upload-container{
+
+.upload-container {
   .file-upload {
     display: none;
   }
+
   .file-upload-label {
     display: flex;
     justify-content: center;
@@ -429,18 +516,20 @@ $inputRounded: 8px;
     text-align: center;
     transition: border-color 0.3s ease;
     padding: 12px 12px;
-    span{
+
+    span {
       color: #999;
       padding-left: 5px;
     }
-    &:hover{
+
+    &:hover {
       border-color: #5a3b75;
     }
   }
 }
 
 /* Data Picker */
- .bs-datepicker-body .bs-calendar-day {
+.bs-datepicker-body .bs-calendar-day {
   background-color: #f8f9fa;
 }
 
@@ -449,17 +538,18 @@ $inputRounded: 8px;
   color: white;
 }
 
-input.ng-invalid.ng-touched, 
+input.ng-invalid.ng-touched,
 select.ng-invalid.ng-touched {
   border: 1px solid #B63533;
 }
 
- .bs-datepicker {
+.bs-datepicker {
   border: 1px solid $purple;
   box-shadow: none !important;
   border-radius: 5px !important;
   top: 10px !important;
-  &::after{
+
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -477,15 +567,72 @@ select.ng-invalid.ng-touched {
   }
 
 }
-.theme-green .bs-datepicker-head{
+
+.theme-green .bs-datepicker-head {
   background-color: $purple !important;
 }
-.bs-datepicker-body{background-color: #f1e9f4;}
-.bs-datepicker-container{padding: 0 !important;}
+
+.bs-datepicker-body {
+  background-color: #f1e9f4;
+}
+
+.bs-datepicker-container {
+  padding: 0 !important;
+}
+
 .theme-green .bs-datepicker-body table td.week span {
   color: $purple !important;
 }
-.bs-datepicker-body table td, .bs-datepicker-body table th{color: #000 !important;}
-.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*=select-]:after, .theme-green .bs-datepicker-body table td[class*=select-] span:after {
+
+.bs-datepicker-body table td,
+.bs-datepicker-body table th {
+  color: #000 !important;
+}
+
+.theme-green .bs-datepicker-body table td span.selected,
+.theme-green .bs-datepicker-body table td.selected span,
+.theme-green .bs-datepicker-body table td span[class*=select-]:after,
+.theme-green .bs-datepicker-body table td[class*=select-] span:after {
   background-color: $purple !important;
+}
+
+input.custom-datepicker {
+  &::placeholder {
+    /* Most modern browsers */
+    color: #000000 !important;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #000000 !important;
+    opacity: 1;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #000000 !important;
+    opacity: 1;
+  }
+
+  &::-webkit-input-placeholder {
+    /* WebKit browsers (Chrome, Safari) */
+    color: #000000 !important;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #000000 !important;
+    opacity: 1;
+  }
+
+  &:-moz-placeholder {
+    /* Mozilla Firefox 4-18 */
+    color: #000000 !important;
+    opacity: 1;
+  }
+}
+.form-check-input[type=checkbox]{
+  border-radius: 0 !important;
 }
