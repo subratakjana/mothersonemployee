@@ -76,9 +76,8 @@
                                     <div class="input-group select-with-icon">
                                        <select class="form-select" id="Physicalstatus" formControlName="Physicalstatus">
                                           <option value="" disabled>Select</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
                                        </select>
                                     </div>
                                  </div>
@@ -89,40 +88,42 @@
                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
                               <div class="empfiled">
                                  <div class="input-group mb-4">
-                                    <label for="Bloodgroup" class="form-label">Bloodgroup</label>
+                                    <label for="Bloodgroup" class="form-label">Blood Group</label>
                                     <div class="input-group select-with-icon">
                                        <select class="form-select" id="Bloodgroup" formControlName="Bloodgroup">
                                           <option value="" disabled>Select</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
+                                          <option value="A+">A+</option>
+                                          <option value="B+">B+</option>
+                                          <option value="O-">O-</option>
+                                          <option value="O+">O+</option>
+                                          <option value="AB+">AB+</option>
                                        </select>
                                     </div>
                                  </div>
                               </div>
                            </div>
 
-                           <!-- Nationalid -->
                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
                               <div class="empfiled">
-                                 <div class="input-group mb-4">
-                                    <label for="Nationalid" class="form-label">National id <span>*</span></label>
-                                    <div class="input-group select-with-icon">
-                                       <select class="form-select" id="Nationalid" formControlName="Nationalid">
-                                          <option value="" disabled>Select</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
-                                       </select>
-                                    </div>
-                                    <small
-                                       *ngIf="personalDetailsForm.get('Nationalid')?.invalid && personalDetailsForm.get('Nationalid')?.touched"
-                                       class="text-danger">
-                                       National id is required
-                                    </small>
-                                 </div>
+                                <div class="input-group mb-4">
+                                  <label for="Nationalid" class="form-label">National id <span>*</span></label>
+                                  <div class="input-group select-with-icon">
+                                    <select class="form-select" id="Nationalid" formControlName="Nationalid">
+                                      <option value="" disabled>Select</option>
+                                      <option *ngFor="let nationalIds of nationalIds" [value]="nationalIds.value">
+                                       {{ nationalIds.label }}
+                                     </option>
+                                    </select>
+                                  </div>
+                                  <small
+                                    *ngIf="personalDetailsForm.get('Nationalid')?.invalid && personalDetailsForm.get('Nationalid')?.touched"
+                                    class="text-danger">
+                                    National id is required
+                                  </small>
+                                </div>
                               </div>
-                           </div>
+                            </div>
+                            
 
                            <!-- Personalemail -->
                            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
@@ -313,9 +314,9 @@
                                     <div class="input-group select-with-icon">
                                        <select class="form-select" id="PlaceOfIssue" formControlName="PlaceOfIssue">
                                           <option value="" disabled>Select</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
+                                          <option value="New Delhi">New Delhi</option>
+                                          <option value="Gurugram">Gurugram</option>
+                                          <option value="Pune">Pune</option>
                                        </select>
                                     </div>
                                  </div>
@@ -336,8 +337,7 @@
                            <div class="savesec d-flex align-items-center justify-content-end gap-3">
                               <button type="button" class="btn btn-outline-primary rounded-5 px-5 py-2 fw-bold"
                                  (click)="cancel()">Cancle</button>
-                              <button type="submit" class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold"
-                                 (click)="next()">Save & Next</button>
+                              <button type="submit" class="btn btn-outline-secondary rounded-5 px-5 py-2 fw-bold">Save & Next</button>
                            </div>
                         </div>
                      </div>

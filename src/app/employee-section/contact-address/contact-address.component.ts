@@ -10,6 +10,7 @@ import { Router } from '@angular/router'; // Import Router
 export class ContactAddressComponent {
   contactDetailsForm: FormGroup;
   currentStep: number = 4;
+  contactDetailsArray!: any;
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.contactDetailsForm = this.fb.group({
@@ -51,6 +52,32 @@ export class ContactAddressComponent {
 
   onSaveAndNext(): void {
     if (this.contactDetailsForm.valid) {
+      this.contactDetailsArray = [
+        {
+          Mobileno: this.contactDetailsForm.controls['Mobileno'].value,
+          Emergency1: this.contactDetailsForm.controls['Emergency1'].value,
+          Emergency2: this.contactDetailsForm.controls['Emergency2'].value,
+          Address1: this.contactDetailsForm.controls['Address1'].value,
+          Address2: this.contactDetailsForm.controls['Address2'].value,
+          Address3: this.contactDetailsForm.controls['Address3'].value,
+          Country: this.contactDetailsForm.controls['Country'].value,
+          State: this.contactDetailsForm.controls['State'].value,
+          City: this.contactDetailsForm.controls['City'].value,
+          Pincode: this.contactDetailsForm.controls['Pincode'].value,
+          sameAsPresent: this.contactDetailsForm.controls['sameAsPresent'].value,
+          pAddress1: this.contactDetailsForm.controls['pAddress1'].value,
+          pAddress2: this.contactDetailsForm.controls['pAddress2'].value,
+          pAddress3: this.contactDetailsForm.controls['pAddress3'].value,
+          pCountry: this.contactDetailsForm.controls['pCountry'].value,
+          pState: this.contactDetailsForm.controls['pState'].value,
+          pCity: this.contactDetailsForm.controls['pCity'].value,
+          pPincode: this.contactDetailsForm.controls['pPincode'].value,
+        },
+      ];
+      localStorage.setItem(
+        'contactDetailsArray',
+        JSON.stringify(this.contactDetailsArray)
+      );
       console.log(this.contactDetailsForm.value);
       this.currentStep++;
       if (this.currentStep === 5) {
@@ -58,19 +85,8 @@ export class ContactAddressComponent {
       }
       // Handle other steps and navigation
     } else {
+      this.contactDetailsForm.markAllAsTouched();
       console.log('Form is invalid');
-    }
-  }
-
-  next(): void {
-    if (this.contactDetailsForm.valid) {
-      this.currentStep++;
-      if (this.currentStep === 5) {
-        this.router.navigate(['employee/family-details']); // Navigate to the Family Details page
-      }
-      // Handle other steps and navigation
-    } else {
-      this.contactDetailsForm.markAllAsTouched(); // Mark all fields as touched to show validation messages
     }
   }
 
@@ -91,6 +107,34 @@ export class ContactAddressComponent {
         this.clearPermanentAddress();
       }
     });
+
+    if (typeof window !== 'undefined' && localStorage) {
+      // Check if there's data in localStorage
+      const storedData = localStorage.getItem('contactDetailsArray');
+      if (storedData) {
+        const parsedData = JSON.parse(storedData)[0];
+        this.contactDetailsForm.patchValue({
+          Mobileno: parsedData.Mobileno,
+          Emergency1: parsedData.Emergency1,
+          Emergency2: parsedData.Emergency2,
+          Address1: parsedData.Address1,
+          Address2: parsedData.Address2,
+          Address3: parsedData.Address3,
+          Country: parsedData.Country,
+          State: parsedData.State,
+          City: parsedData.City,
+          Pincode: parsedData.Pincode,
+          sameAsPresent: parsedData.sameAsPresent,
+          pAddress1: parsedData.pAddress1,
+          pAddress2: parsedData.pAddress2,
+          pAddress3: parsedData.pAddress3,
+          pCountry: parsedData.pCountry,
+          pState: parsedData.pState,
+          pCity: parsedData.pCity,
+          pPincode: parsedData.pPincode,
+        });
+      }
+    }
   }
 
 

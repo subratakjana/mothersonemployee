@@ -170,7 +170,7 @@
         }
     }
     .download-icon{
-        height: 45px;
+    height: 45px;
     width: 45px;
     background-color: #e9e9e9;
     display: flex;
@@ -178,6 +178,7 @@
     justify-content: center;
     margin-left: 10px;
     border-radius: 5px;
+    cursor: pointer;
     }
 }
 }

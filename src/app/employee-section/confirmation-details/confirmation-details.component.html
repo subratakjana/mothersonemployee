@@ -36,181 +36,183 @@
                                         src="../../../assets/icons/form-icon/edit.svg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 col-sm-10 col-lg-10 col-12">
+                                <div class="col-md-10 col-sm-10 col-lg-10 col-12" *ngIf="generalDetailsArray">
                                     <div class="section-title">Employee Information</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Global Id</div>
-                                            <div class="info-value">1234</div>
+                                            <div class="info-value">{{generalDetailsArray.Globalid}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Unit Id</div>
-                                            <div class="info-value">3232</div>
+                                            <div class="info-value">{{generalDetailsArray.Unitid}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Employee type</div>
-                                            <div class="info-value">PAS</div>
+                                            <div class="info-value">{{generalDetailsArray.Employeetype}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Employee Id</div>
-                                            <div class="info-value">2344</div>
+                                            <div class="info-value">{{generalDetailsArray.Employeeid}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Salute (Mr/Mrs)</div>
-                                            <div class="info-value">Mr</div>
+                                            <div class="info-value">{{generalDetailsArray.Salute}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">First name</div>
-                                            <div class="info-value">John</div>
+                                            <div class="info-value">{{generalDetailsArray.Firstname}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Middle name</div>
-                                            <div class="info-value">-</div>
+                                            <div class="info-value">{{generalDetailsArray.Middlename}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Last name</div>
-                                            <div class="info-value">Doe</div>
+                                            <div class="info-value">{{generalDetailsArray.Lastname}}</div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="info-label">Gender</div>
-                                            <div class="info-value">Male</div>
+                                            <div class="info-value">{{generalDetailsArray.Gender}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Email Id</div>
-                                            <div class="info-value">john.doemotherson.com</div>
+                                            <div class="info-value">{{generalDetailsArray.emailid}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Mobile no.</div>
-                                            <div class="info-value">9876543210</div>
+                                            <div class="info-value">{{generalDetailsArray.phoneno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Window login id</div>
-                                            <div class="info-value">43210</div>
+                                            <div class="info-value" *ngIf="generalDetailsArray.WindowLogin">
+                                                {{generalDetailsArray.WindowLogin}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Domain name</div>
-                                            <div class="info-value">John</div>
+                                            <div class="info-value">{{generalDetailsArray.Domainname}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Direct/Indirect</div>
-                                            <div class="info-value">Direct</div>
+                                            <div class="info-value">{{generalDetailsArray.DirectIndirect}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Deputation ED</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.DeputationSD)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Deputation SD</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.DeputationeD)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Deputation location</div>
-                                            <div class="info-value">Bangalore</div>
+                                            <div class="info-value">{{generalDetailsArray.Deputationlocation}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Shift rule</div>
-                                            <div class="info-value">A</div>
+                                            <div class="info-value">{{generalDetailsArray.Shiftrule}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Remarks</div>
-                                            <div class="info-value">None</div>
+                                            <div class="info-value">{{generalDetailsArray.Remarks}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Joining Detail</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Interview date</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.interviewDate)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Unit DOJ</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.unitDOJ)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Group DOJ</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.groupDOJ)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Confirmed</div>
                                             <div class="info-value">
-                                                <input type="checkbox" checked disabled>
+                                                <input type="checkbox" [checked]="generalDetailsArray.confirmed"
+                                                    disabled>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Confirmation date</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value" *ngIf="generalDetailsArray.confirmationDate">
+                                                {{formatDate(generalDetailsArray.confirmationDate)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Extended month</div>
-                                            <div class="info-value">24</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.extendedMonth)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Extended date reason</div>
-                                            <div class="info-value">None</div>
+                                            <div class="info-value">{{generalDetailsArray.extendedDateReason}}</div>
                                         </div>
-
+                                        <div class="col-md-3">
+                                            <div class="info-label">Current group experiences</div>
+                                            <div class="info-value">{{generalDetailsArray.currentGroupExperience}}</div>
+                                        </div>
                                     </div>
                                     <div class="section-title">Current Position</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Department</div>
-                                            <div class="info-value">emPro</div>
+                                            <div class="info-value">{{generalDetailsArray.department}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Section code</div>
-                                            <div class="info-value">2134</div>
+                                            <div class="info-value">{{generalDetailsArray.sectionCode}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Designation</div>
-                                            <div class="info-value">Engineer</div>
+                                            <div class="info-value">{{generalDetailsArray.designation}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Grade</div>
-                                            <div class="info-value">A</div>
+                                            <div class="info-value">{{generalDetailsArray.grade}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Location</div>
-                                            <div class="info-value">Noida</div>
+                                            <div class="info-value">{{generalDetailsArray.location}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Separation Detail</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Date of resignation</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.resignationDate)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Unit DOL</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.unitDOL)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Group DOL</div>
-                                            <div class="info-value">01/03/2024</div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="info-label">DOR</div>
-                                            <div class="info-value">01/03/2024</div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="info-label">Ret. ext date</div>
-                                            <div class="info-value">01/03/2024</div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="info-label">Retirement ext. date</div>
-                                            <div class="info-value">None</div>
+                                            <div class="info-value">{{formatDate(generalDetailsArray.groupDOL)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Reason for leaving</div>
-                                            <div class="info-value">None</div>
+                                            <div class="info-value">{{generalDetailsArray.reasonLeaving}}</div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="info-label">DOR</div>
+                                            <div class="info-value">{{generalDetailsArray.retirementDate}}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-lg-2 col-12">
                                     <div class="proimg">
                                         <div class="proins">
-                                            <img src="../../../assets/icons/form-icon/profile-image.png" alt=""
-                                                class="img-fluid">
+                                            <img src="{{generalDetailsArray.profileImage}}" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -218,78 +220,78 @@
                         </div>
                         <div class="employee-info">
                             <div class="d-flex align-items-center justify-content-between mb-4 einfo">
-                                <h2>Personal Detail</h2>
+                                <h2>Personal Details</h2>
                                 <a routerLink="/employee/personal-details"><img
                                         src="../../../assets/icons/form-icon/edit.svg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 col-sm-10 col-lg-10 col-12">
+                                <div class="col-md-10 col-sm-10 col-lg-10 col-12" *ngIf="personalDetailsArray">
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">DOB</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(personalDetailsArray.DOB)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Birth place</div>
-                                            <div class="info-value">Delhi</div>
+                                            <div class="info-value">{{personalDetailsArray.Birthplace}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Physical status</div>
-                                            <div class="info-value">Fit</div>
+                                            <div class="info-value">{{personalDetailsArray.Physicalstatus}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Blood group</div>
-                                            <div class="info-value">B+</div>
+                                            <div class="info-value">{{personalDetailsArray.Bloodgroup}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">National id</div>
-                                            <div class="info-value">IND</div>
+                                            <div class="info-value">{{personalDetailsArray.Nationalid}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Personal email id</div>
-                                            <div class="info-value">john&#64;motherson.com</div>
+                                            <div class="info-value">{{personalDetailsArray.Personalemail}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Employee Identity</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">PAN no.</div>
-                                            <div class="info-value">ABCDE1234A</div>
+                                            <div class="info-value">{{personalDetailsArray.pan_no}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Aadhar no.</div>
-                                            <div class="info-value">876523450987</div>
+                                            <div class="info-value">{{personalDetailsArray.Aadhar_no}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Company PF no.</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{personalDetailsArray.Company_PF_no}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">PRAN number</div>
-                                            <div class="info-value">876523450987</div>
+                                            <div class="info-value">{{personalDetailsArray.PRAN_number}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Labour card no.</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{personalDetailsArray.Labour_card_no}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Passport & Visa</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Passport no.</div>
-                                            <div class="info-value">12456352727</div>
+                                            <div class="info-value">{{personalDetailsArray.Passport_no}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Issued on</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(personalDetailsArray.Issuedon)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Valid upto</div>
-                                            <div class="info-value">01/03/2034</div>
+                                            <div class="info-value">{{formatDate(personalDetailsArray.Validupto)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Place of issue</div>
-                                            <div class="info-value">Delhi</div>
+                                            <div class="info-value">{{personalDetailsArray.PlaceOfIssue}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -302,74 +304,79 @@
                                         src="../../../assets/icons/form-icon/edit.svg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 col-sm-10 col-lg-10 col-12">
+                                <div class="col-md-10 col-sm-10 col-lg-10 col-12" *ngIf="bankDetailsArray">
                                     <div class="section-title">Statutory Detail</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">PF no.</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{bankDetailsArray.PFno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">UAN no.</div>
-                                            <div class="info-value">876523450987</div>
+                                            <div class="info-value">{{bankDetailsArray.UAN_no}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">ESI no.</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{bankDetailsArray.ESI_no}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">ESI registered no.</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(bankDetailsArray.ESI_registered)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Dispensory</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{bankDetailsArray.Dispensory}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">EDLI no.</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{bankDetailsArray.EDLIno}}</div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="info-label">Gratuity no.</div>
+                                            <div class="info-value">{{bankDetailsArray.Gratuityno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Super annuation no.</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{bankDetailsArray.Super}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Saving Bank Detail</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Payment mode</div>
-                                            <div class="info-value">Bank</div>
+                                            <div class="info-value">{{bankDetailsArray.Saving_Paymentmode}}</div>
                                         </div>
                                         <div class="col-md-3">
-                                            <div class="info-label">Bank CA id</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-label">Bank SA id</div>
+                                            <div class="info-value">{{bankDetailsArray.Saving_Bankid}}</div>
                                         </div>
                                         <div class="col-md-3">
-                                            <div class="info-label">Bank CA A/c no.</div>
-                                            <div class="info-value">876523450987</div>
+                                            <div class="info-label">Bank SA A/c no.</div>
+                                            <div class="info-value">{{bankDetailsArray.Saving_Accountno}}</div>
                                         </div>
                                         <div class="col-md-3">
-                                            <div class="info-label">Bank CA IFSC</div>
-                                            <div class="info-value">ICIC1234</div>
+                                            <div class="info-label">Bank SA IFSC</div>
+                                            <div class="info-value">{{bankDetailsArray.Saving_IFSCcode}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Current Bank Detail</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Payment mode</div>
-                                            <div class="info-value">Bank</div>
+                                            <div class="info-value">{{bankDetailsArray.Current_Paymentmode}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Bank CA id</div>
-                                            <div class="info-value">450987876523</div>
+                                            <div class="info-value">{{bankDetailsArray.Current_Bankid}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Bank CA A/c no.</div>
-                                            <div class="info-value">876523450987</div>
+                                            <div class="info-value">{{bankDetailsArray.Current_Accountno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Bank CA IFSC</div>
-                                            <div class="info-value">ICIC1234</div>
+                                            <div class="info-value">{{bankDetailsArray.Current_IFSCcode}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -382,86 +389,86 @@
                                         src="../../../assets/icons/form-icon/edit.svg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 col-sm-10 col-lg-10 col-12">
+                                <div class="col-md-10 col-sm-10 col-lg-10 col-12" *ngIf="contactDetailsArray">
                                     <div class="section-title">Contact Detail</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Mobile no.</div>
-                                            <div class="info-value">9876512345</div>
+                                            <div class="info-value">{{contactDetailsArray.Mobileno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Emergency mobile no. 1</div>
-                                            <div class="info-value">9876512345</div>
+                                            <div class="info-value">{{contactDetailsArray.Emergency1}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Emergency mobile no. 2</div>
-                                            <div class="info-value">9876512345</div>
+                                            <div class="info-value">{{contactDetailsArray.Emergency2}}</div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <!-- <div class="col-md-3">
                                             <div class="info-label">Personal email id</div>
-                                            <div class="info-value">john&#64;motherson.com</div>
-                                        </div>
+                                            <div class="info-value">{{contactDetailsArray}}</div>
+                                        </div> -->
                                     </div>
                                     <div class="section-title">Present Address</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Address (Line 1)</div>
-                                            <div class="info-value">New city lane</div>
+                                            <div class="info-value">{{contactDetailsArray.Address1}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Address (Line 2)</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">{{contactDetailsArray.Address2}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Address (Line 3)</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">{{contactDetailsArray.Address3}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Country</div>
-                                            <div class="info-value">00234</div>
+                                            <div class="info-value">{{contactDetailsArray.Country}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">State</div>
-                                            <div class="info-value">Delhi</div>
+                                            <div class="info-value">{{contactDetailsArray.State}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">City</div>
-                                            <div class="info-value">New Delhi</div>
+                                            <div class="info-value">{{contactDetailsArray.City}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Pin code</div>
-                                            <div class="info-value">110013</div>
+                                            <div class="info-value">{{contactDetailsArray.Pincode}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Permanent Address</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Address (Line 1)</div>
-                                            <div class="info-value">New city lane</div>
+                                            <div class="info-value">{{contactDetailsArray.pAddress1}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Address (Line 2)</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">{{contactDetailsArray.pAddress2}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Address (Line 3)</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">{{contactDetailsArray.pAddress3}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Country</div>
-                                            <div class="info-value">00234</div>
+                                            <div class="info-value">{{contactDetailsArray.pCountry}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">State</div>
-                                            <div class="info-value">Delhi</div>
+                                            <div class="info-value">{{contactDetailsArray.pState}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">City</div>
-                                            <div class="info-value">New Delhi</div>
+                                            <div class="info-value">{{contactDetailsArray.pCity}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Pin code</div>
-                                            <div class="info-value">110013</div>
+                                            <div class="info-value">{{contactDetailsArray.pPincode}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -469,180 +476,185 @@
                         </div>
                         <div class="employee-info">
                             <div class="d-flex align-items-center justify-content-between mb-4 einfo">
-                                <h2>Family Detail</h2>
+                                <h2>Family Details</h2>
                                 <a routerLink="/employee/family-details"><img
                                         src="../../../assets/icons/form-icon/edit.svg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 col-sm-10 col-lg-10 col-12">
+                                <div class="col-md-10 col-sm-10 col-lg-10 col-12" *ngIf="familyDetailsArray">
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Father name</div>
-                                            <div class="info-value">John Jacob</div>
+                                            <div class="info-value">{{familyDetailsArray.fathersName}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Father DOB</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.fathersDOB)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Mother name</div>
-                                            <div class="info-value">John Jacob</div>
+                                            <div class="info-value">{{familyDetailsArray.mothersName}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Mother DOB</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.mothersDOB)}}</div>
                                         </div>
                                     </div>
 
                                     <div class="row info-row">
-                                        <div class="col-md-3">
+                                        <!-- <div class="col-md-3">
                                             <div class="info-label">Address (Line 1)</div>
-                                            <div class="info-value">New city lane</div>
-                                        </div>
+                                            <div class="info-value"></div>
+                                        </div> -->
                                         <div class="col-md-3">
                                             <div class="info-label">Wedding anniversary</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">
+                                                {{formatDate(familyDetailsArray.weddingAnniversary)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Emp med SD</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.medicalFrom)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Emp med ED</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.medicalTo)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Extra premium (Self)</div>
-                                            <div class="info-value">4545</div>
+                                            <div class="info-value">{{familyDetailsArray.extraPremiumSelf}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Extra premium (Parent)</div>
-                                            <div class="info-value">4545</div>
+                                            <div class="info-value">{{familyDetailsArray.extraPremiumParent}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Extra premium top-up (Self)</div>
-                                            <div class="info-value">4545</div>
+                                            <div class="info-value">{{familyDetailsArray.extraPremiumTopUpSelf}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Extra premium top-up (Parent)</div>
-                                            <div class="info-value">4545</div>
+                                            <div class="info-value">{{familyDetailsArray.extraPremiumTopUpParent}}</div>
                                         </div>
                                     </div>
-                                    <div class="section-title">Spouse Detail</div>
+                                    <div class="section-title">Spouse Details</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Spouse name</div>
-                                            <div class="info-value">Alex</div>
+                                            <div class="info-value">{{familyDetailsArray.spouseName}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Gender</div>
-                                            <div class="info-value">Fenmale</div>
+                                            <div class="info-value">{{familyDetailsArray.spouseGender}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Spouse DOB</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.spouseDOB)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Spouse med SD</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.smedicalFrom)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Spouse med ED</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.smedicalTo)}}</div>
                                         </div>
 
                                     </div>
-                                    <div class="section-title">1st Child Detail</div>
+                                    <div class="section-title">1st Child Details</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Child name</div>
-                                            <div class="info-value">Sam</div>
+                                            <div class="info-value">{{familyDetailsArray.onespouseName}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Gender</div>
-                                            <div class="info-value">Male</div>
+                                            <div class="info-value">{{familyDetailsArray.onespouseGender}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Child DOB</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.onespouseDOB)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Child med SD</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.onesmedicalFrom)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Child med ED</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.onesmedicalTo)}}
+                                            </div>
                                         </div>
 
                                     </div>
-                                    <div class="section-title">2nd Child Detail</div>
+                                    <div class="section-title">2nd Child Details</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Child name</div>
-                                            <div class="info-value">Josephine</div>
+                                            <div class="info-value">{{familyDetailsArray.twospouseName}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Gender</div>
-                                            <div class="info-value">Female</div>
+                                            <div class="info-value">{{familyDetailsArray.twospouseGender}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Child DOB</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.twospouseDOB)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Child med SD</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.twosmedicalFrom)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Child med ED</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(familyDetailsArray.twosmedicalTo)}}
+                                            </div>
                                         </div>
 
                                     </div>
-                                    <div class="section-title">Nomination Detail</div>
-                                    <div class="row info-row">
+                                    <!-- <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">PF nominee</div>
-                                            <div class="info-value">John Jacob</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">PF nominee rel</div>
-                                            <div class="info-value">Father</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">PF nominee rel %</div>
-                                            <div class="info-value">50%</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">ESI nominee</div>
-                                            <div class="info-value">John Jacob</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">ESI nominee rel</div>
-                                            <div class="info-value">Father</div>
+                                            <div class="info-value"></div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="info-label">ESI nominee rel %</div>
-                                            <div class="info-value">50%</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Gratuity nominee</div>
-                                            <div class="info-value">John Jacob</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Gratuity nominee rel</div>
-                                            <div class="info-value">Father</div>
+                                            <div class="info-value"></div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Gratuity nominee rel %</div>
-                                            <div class="info-value">50%</div>
-                                        </div>
-
-                                    </div>
+                                            <div class="info-value"></div>
+                                        </div> 
+                                    </div>-->
                                     <div class="section-title">Employee Reference</div>
-
                                     <div class="row mb-5">
                                         <div class="col-lg-12 col-sm-12 col-md-12 col-12">
                                             <div class="row gap-0">
@@ -651,8 +663,9 @@
                                                         <div class="d-flex px-4 py-1 align-items-center" role="search">
                                                             <svg-icon style="transform: scale(1.3);"
                                                                 src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
-                                                            <input class="form-control border-0 fs-6 ps-2" type="search"
-                                                                placeholder="Search" aria-label="Search">
+                                                            <input #searchInput class="form-control border-0 fs-6 ps-2"
+                                                                type="search" placeholder="Search" aria-label="Search"
+                                                                (keyup)="searchReferenceByText(searchInput.value)">
                                                         </div>
                                                         <div class="table-responsive">
                                                             <table class="table rounded-3 mb-0">
@@ -668,6 +681,7 @@
                                                                         <th scope="col">Reference Email</th>
                                                                         <th scope="col">Address (Line 1)</th>
                                                                         <th scope="col">Address (Line 2)</th>
+                                                                        <th scope="col">Address (Line 3)</th>
                                                                         <th scope="col">City</th>
                                                                         <th scope="col">State</th>
                                                                         <th scope="col">Country</th>
@@ -678,63 +692,72 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td scope="col text-center">
-                                                                            <div class="text-center">
-                                                                                <input class="form-check-input"
-                                                                                    type="checkbox" value="">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>John Doe</td>
-                                                                        <td>example&#64;email.com</td>
-                                                                        <td>New City Lane</td>
-                                                                        <td>Lajpat Nagar</td>
-                                                                        <td>New Delhi</td>
-                                                                        <td>Delhi</td>
-                                                                        <td>India</td>
-                                                                        <td>110013</td>
-                                                                        <td>9876543210</td>
-                                                                        <td>9876543210</td>
+                                                                    <tr *ngIf="noRecordsFound">
+                                                                        <td colspan="13"
+                                                                            class="text-center text-danger fw-bold">No
+                                                                            records found</td>
+                                                                    </tr>
+                                                                    <tr *ngFor="let item of temEmplyeeReferencesArray">
+                                                                        <td><strong>{{ item.name }}</strong></td>
+                                                                        <td>{{ item.relation }}</td>
+                                                                        <td>{{ item.email }}</td>
+                                                                        <td>{{ item.addressLine1 }}</td>
+                                                                        <td>{{ item.addressLine2 }}</td>
+                                                                        <td>{{ item.addressLine3 }}</td>
+                                                                        <td>{{ item.country }}</td>
+                                                                        <td>{{ item.state }}</td>
+                                                                        <td>{{ item.city }}</td>
+                                                                        <td>{{ item.pin }}</td>
+                                                                        <td>{{ item.mobile }}</td>
+                                                                        <td>{{ item.remarksData }}</td>
                                                                         <td><i class="bi bi-three-dots-vertical"></i>
                                                                         </td>
                                                                     </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-title">Nomination Details</div>
+                                    <div class="row">
+                                        <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                            <div class="row gap-0">
+                                                <div class="col-lg-12 col-sm-12 col-md-12 col-12">
+                                                    <div class="tableview overflow-hidden rounded-3">
+                                                        <div class="d-flex px-4 py-1 align-items-center" role="search">
+                                                            <svg-icon style="transform: scale(1.3);"
+                                                                src="../../../assets/icons/empolyee/search-table.svg">
+                                                            </svg-icon>
+                                                            <input #searchInputNomination
+                                                                class="form-control border-0 fs-6 ps-2" type="search"
+                                                                placeholder="Search" aria-label="Search"
+                                                                (keyup)="searchNominationByText(searchInputNomination.value)">
+                                                        </div>
+                                                        <div class="table-responsive">
+                                                            <table class="table rounded-3 mb-0">
+                                                                <thead>
                                                                     <tr>
-                                                                        <td scope="col text-center">
-                                                                            <div class="text-center">
-                                                                                <input class="form-check-input"
-                                                                                    type="checkbox" value="">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>John Doe</td>
-                                                                        <td>example&#64;email.com</td>
-                                                                        <td>New City Lane</td>
-                                                                        <td>Lajpat Nagar</td>
-                                                                        <td>New Delhi</td>
-                                                                        <td>Delhi</td>
-                                                                        <td>India</td>
-                                                                        <td>110013</td>
-                                                                        <td>9876543210</td>
-                                                                        <td>9876543210</td>
-                                                                        <td><i class="bi bi-three-dots-vertical"></i>
-                                                                        </td>
+                                                                        <th scope="col">Nominee Name</th>
+                                                                        <th scope="col">Nominee Relation</th>
+                                                                        <th scope="col">PF/ESI/Gratuity</th>
+                                                                        <th scope="col">Share %age</th>
+                                                                        <th scope="col">Action</th>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td scope="col text-center">
-                                                                            <div class="text-center">
-                                                                                <input class="form-check-input"
-                                                                                    type="checkbox" value="">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>John Doe</td>
-                                                                        <td>example&#64;email.com</td>
-                                                                        <td>New City Lane</td>
-                                                                        <td>Lajpat Nagar</td>
-                                                                        <td>New Delhi</td>
-                                                                        <td>Delhi</td>
-                                                                        <td>India</td>
-                                                                        <td>110013</td>
-                                                                        <td>9876543210</td>
-                                                                        <td>9876543210</td>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngIf="noRecordsFound">
+                                                                        <td colspan="13"
+                                                                            class="text-center text-danger fw-bold">No
+                                                                            records found</td>
+                                                                    </tr>
+                                                                    <tr *ngFor="let item of temnominationArray">
+                                                                        <td><strong>{{ item.nomineeName }}</strong></td>
+                                                                        <td>{{ item.gratuity }}</td>
+                                                                        <td>{{ item.relation }}</td>
+                                                                        <td>{{ item.share }}</td>
                                                                         <td><i class="bi bi-three-dots-vertical"></i>
                                                                         </td>
                                                                     </tr>
@@ -758,7 +781,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-10 col-sm-10 col-lg-10 col-12">
-                                    <div class="section-title">Previous Employment</div>
+                                    <div class="section-title">Employee Reference</div>
                                     <div class="row mb-5">
                                         <div class="col-lg-12 col-sm-12 col-md-12 col-12">
                                             <div class="row gap-0">
@@ -768,7 +791,10 @@
                                                             <svg-icon style="transform: scale(1.3);"
                                                                 src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
                                                             <input class="form-control border-0 fs-6 ps-2" type="search"
-                                                                placeholder="Search" aria-label="Search">
+                                                                name="searchExperienceText" placeholder="Search"
+                                                                aria-label="Search" [(ngModel)]="searchExperienceText"
+                                                                (keyup)="searchExperienceByText(searchExperienceText)"
+                                                                (search)="searchExperienceByText(searchExperienceText)">
                                                         </div>
                                                         <div class="table-responsive">
                                                             <table class="table rounded-3 mb-0">
@@ -787,42 +813,18 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
+                                                                    <tr *ngFor="let item of tempExperienceDetailsArray">
                                                                         <td scope="col text-center">
                                                                             <div class="text-center">
                                                                                 <input class="form-check-input"
                                                                                     type="checkbox" value="">
                                                                             </div>
                                                                         </td>
-                                                                        <td>Infosys</td>
-                                                                        <td>2</td>
-                                                                        <td>No</td>
-                                                                        <td><i class="bi bi-three-dots-vertical"></i>
+                                                                        <td>{{item.companyname}}</td>
+                                                                        <td>{{item.yearsexperience}}</td>
+                                                                        <td>{{item.expSwitchCheckChecked == true ? 'Yes'
+                                                                            : 'No'}}
                                                                         </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td scope="col text-center">
-                                                                            <div class="text-center">
-                                                                                <input class="form-check-input"
-                                                                                    type="checkbox" value="">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>MIND (Motherson)</td>
-                                                                        <td>3</td>
-                                                                        <td>Yes</td>
-                                                                        <td><i class="bi bi-three-dots-vertical"></i>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td scope="col text-center">
-                                                                            <div class="text-center">
-                                                                                <input class="form-check-input"
-                                                                                    type="checkbox" value="">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>MIND (Motherson)</td>
-                                                                        <td>1</td>
-                                                                        <td>Yes</td>
                                                                         <td><i class="bi bi-three-dots-vertical"></i>
                                                                         </td>
                                                                     </tr>
@@ -834,7 +836,77 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="section-title">Previous Employment</div>
+                                    <div class="row mb-5">
+                                        <div class="section-title">Education</div>
+                                        <div class="col-lg-10 col-sm-10 col-md-10 col-12">
+                                            <div class="row gap-0">
+                                                <div class="col-lg-12 col-sm-12 col-md-12 col-12">
+                                                    <div class="tableview overflow-hidden rounded-3">
+                                                        <div class="d-flex px-4 py-1 align-items-center" role="search">
+                                                            <svg-icon style="transform: scale(1.3);"
+                                                                src="../../../assets/icons/empolyee/search-table.svg"></svg-icon>
+                                                            <input class="form-control border-0 fs-6 ps-2" type="search"
+                                                                name="searchEducationText" placeholder="Search"
+                                                                aria-label="Search" [(ngModel)]="searchEducationText"
+                                                                (keyup)="searchEducationByText(searchEducationText)"
+                                                                (search)="searchEducationByText(searchEducationText)">
+                                                        </div>
+                                                        <div class="table-responsive">
+                                                            <table class="table rounded-3 mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col text-center">
+                                                                            <div class="text-center">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value="">
+                                                                            </div>
+                                                                        </th>
+                                                                        <th scope="col">Qualification</th>
+                                                                        <th scope="col">Course</th>
+                                                                        <th scope="col">University</th>
+                                                                        <th scope="col">CGPA</th>
+                                                                        <th scope="col">Passing Year</th>
+                                                                        <th scope="col">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let item of tempEducationDetailsArray">
+                                                                        <td scope="col text-center">
+                                                                            <div class="text-center">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>{{item.qualification}}</td>
+                                                                        <td>{{item.course}}</td>
+                                                                        <td>{{item.university}}</td>
+                                                                        <td>{{item.cgpa}}</td>
+                                                                        <td>{{item.passingyear}}</td>
+                                                                        <td><i class="bi bi-three-dots-vertical"></i>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="7">
+                                                                            <div class="fw-semibold text-primary fs-6 cursoer"
+                                                                                data-bs-toggle="offcanvas"
+                                                                                data-bs-target="#addeducation"
+                                                                                aria-controls="addeducation"
+                                                                                style="cursor: pointer;"><i
+                                                                                    class="bi bi-plus-lg text-primary fw-semibold fs-5"></i>
+                                                                                Add Education</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="section-title">Previous Employment</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Previous Employment</div>
@@ -856,7 +928,8 @@
                                             <div class="info-label">Passing year</div>
                                             <div class="info-value">2019</div>
                                         </div>
-                                    </div>
+                                    </div> -->
+
                                 </div>
                             </div>
                         </div>
@@ -868,46 +941,46 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-10 col-sm-10 col-lg-10 col-12">
-                                    <div class="section-title">Asset Detail</div>
-                                    <div class="row info-row">
+                                    <div class="section-title">Asset Details</div>
+                                    <div class="row info-row" *ngIf="assetsDetailsArray">
                                         <div class="col-md-3">
                                             <div class="info-label">Vehicle</div>
-                                            <div class="info-value">Hyundai i20</div>
+                                            <div class="info-value">{{assetsDetailsArray.Vehicle}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Vehicle no.</div>
-                                            <div class="info-value">UP16DT2030</div>
+                                            <div class="info-value">{{assetsDetailsArray.Vehicleno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">License no.</div>
-                                            <div class="info-value">UP34793739373</div>
+                                            <div class="info-value">{{assetsDetailsArray.Licenseno}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Transport code</div>
-                                            <div class="info-value">2345</div>
+                                            <div class="info-value">{{assetsDetailsArray.Transportcode}}</div>
                                         </div>
                                     </div>
                                     <div class="section-title">Documents Upload</div>
                                     <div class="row info-row">
                                         <div class="col-md-3">
                                             <div class="info-label">Aadhaar</div>
-                                            <div class="info-value">New city lane</div>
+                                            <div class="info-value">[image]</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">PAN</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">[image]</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">UAN</div>
-                                            <div class="info-value">Lajpat nagar</div>
+                                            <div class="info-value">[image]</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">PRAN</div>
-                                            <div class="info-value">00234</div>
+                                            <div class="info-value">[image]</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Bank A/c details</div>
-                                            <div class="info-value">00234</div>
+                                            <div class="info-value">[image]</div>
                                         </div>
                                     </div>
                                 </div>
@@ -915,25 +988,31 @@
                         </div>
                         <div class="employee-info">
                             <div class="d-flex align-items-center justify-content-between mb-4 einfo">
-                                <h2>Salary Detail</h2>
+                                <h2>Salary Details</h2>
                                 <a routerLink="/employee/salary-details"><img
                                         src="../../../assets/icons/form-icon/edit.svg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="row">
                                 <div class="col-md-10 col-sm-10 col-lg-10 col-12">
-                                    <div class="section-title">Asset Detail</div>
-                                    <div class="row info-row">
+                                    <div class="section-title">Asset Details</div>
+                                    <div class="row info-row" *ngIf="salaryDetailsArray">
                                         <div class="col-md-3">
                                             <div class="info-label">Salary revision date</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">
+                                                {{formatDate(salaryDetailsArray.Salaryrevisiondate)}}</div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Salary effective date from</div>
-                                            <div class="info-value">01/03/2024</div>
+                                            <div class="info-value">{{formatDate(salaryDetailsArray.Salarystructure)}}
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="info-label">Salary structure Id</div>
-                                            <div class="info-value">MT001</div>
+                                            <div class="info-value">{{salaryDetailsArray.Salarystructure}}</div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="info-label">Reasonpredefined</div>
+                                            <div class="info-value">{{salaryDetailsArray.Reasonpredefined}}</div>
                                         </div>
 
                                     </div>

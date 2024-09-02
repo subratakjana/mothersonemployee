@@ -15,4 +15,8 @@ export class SidenavComponent {
   isExpanded(menu: string): boolean {
     return !!this.expandedMenus[menu];
   }
+  
+
 }
+
+
